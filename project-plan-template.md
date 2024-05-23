@@ -2,19 +2,11 @@
 
 ## Objective
 
-A short statement about the objective of your project.
-
-Example:
-
-> The objective of our project is to provide analytical datasets from our Orders API and Customers database.
+> The objective of our project is to provide analytical datasets from jobs posted in Findwork API and their relation to the population size of where these opportunities are available.
 
 ## Consumers
 
-What users would find your data useful? How do they want to access the data?
-
-Example:
-
-> The users of our datasets are Data Analysts and the Production team in the business.
+New data engineers who want to know where to look for jobs and which cities have the potential of being less competitive based on their population size.
 
 ## Questions
 
@@ -22,23 +14,22 @@ What questions are you trying to answer with your data? How will your data suppo
 
 Example:
 
-> - How many orders are there for each customer?
-> - What countries and regions have the most orders?
-> - What customers have their orders delayed?
-> - How many delayed orders are there for each country and region?
-> - How many orders do we have for each day?
-> - How many delayed orders do we have for each day?
+> - Are remote jobs growing over time?
+> - What job roles are most common?
+> - What are the most common employment types?
+> - What is the population of the top 10 cities with more job opportunities? 
 
 ## Source datasets
 
 What datasets are you sourcing from? How frequently are the source datasets updating?
 
-Example:
 
 | Source name | Source type | Source documentation |
 | - | - | - |
-| Customers database | PostgreSQL database | - |
-| Orders API | REST API | - |
+| Population data | csv | TBC |
+| findwork API | REST API | [DOCS](https://findwork.dev/developers/#api-key) |
+
+The data available through the API gets updated everytime a new job is posted.
 
 ## Solution architecture
 
@@ -58,8 +49,4 @@ Here is a sample solution architecture diagram:
 
 How is your project broken down? Who is doing what?
 
-We recommend using a free Task board such as [Trello](https://trello.com/). This makes it easy to assign and track tasks to each individual.
-
-Example:
-
-![images/kanban-task-board.png](images/kanban-task-board.png)
+https://trello.com/b/VSAZmRke/kanban-template
