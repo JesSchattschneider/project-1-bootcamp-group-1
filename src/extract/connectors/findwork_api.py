@@ -1,7 +1,7 @@
 import requests
 
 
-class FindworkApiClient:
+class FindWorkApiClient:
     def __init__(self, api_key: str):
         self.base_url = "https://findwork.dev/api"
         if api_key is None:
