@@ -1,8 +1,0 @@
-name: weather_etl
-config: 
-  city_reference_path: "./etl_project/data/weather/australian_capital_cities.csv"
-  population_reference_path: "./etl_project/data/weather/australian_city_population.csv"
-  log_folder_path: "./etl_project/logs"
-schedule:
-  run_seconds: 5
-  poll_seconds: 2
