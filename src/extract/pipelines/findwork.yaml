@@ -1,8 +1,7 @@
-name: weather_etl
+name: jobs_etl
 config: 
-  city_reference_path: "./etl_project/data/weather/australian_capital_cities.csv"
-  population_reference_path: "./etl_project/data/weather/australian_city_population.csv"
-  log_folder_path: "./etl_project/logs"
+  population_reference_path: "./src/extract/data/world-city-listing-table.csv"
+  log_folder_path: "./src/extract/logs"
 schedule:
   run_seconds: 5
   poll_seconds: 2
