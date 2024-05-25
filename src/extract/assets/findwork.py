@@ -7,7 +7,7 @@ from src.extract.connectors.postgresql import PostgreSqlClient
 
 
 def extract_jobs(
-    findwork_api_client: FindWorkApiClient, search_query: str, location: str = None, page: int = 1
+    findwork_api_client: FindWorkApiClient, search_query: str = None, location: str = None, page: int = 1
 ) -> pd.DataFrame:
     """
     Extract job listings based on the search query and location.

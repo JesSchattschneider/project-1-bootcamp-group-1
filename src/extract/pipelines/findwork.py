@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from src.extract.connectors.findwork_api import FindworkApiClient
+from src.extract.connectors.findwork_api import FindWorkApiClient
 from src.extract.connectors.postgresql import PostgreSqlClient
 from sqlalchemy import Table, MetaData, Column, Integer, String, Float
 from src.extract.assets.findwork import (
@@ -23,57 +23,56 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
     # set up environment variables
     pipeline_logging.logger.info("Getting pipeline environment variables")
     API_KEY = os.environ.get("API_KEY")
-    SERVER_NAME = os.environ.get("SERVER_NAME")
-    DATABASE_NAME = os.environ.get("DATABASE_NAME")
-    DB_USERNAME = os.environ.get("DB_USERNAME")
-    DB_PASSWORD = os.environ.get("DB_PASSWORD")
-    PORT = os.environ.get("PORT")
 
     pipeline_logging.logger.info("Creating Findwork API client")
-    findwork_api_client = FindworkApiClient(api_key=API_KEY)
+    findwork_api_client = FindWorkApiClient(api_key=API_KEY)
 
     # extract
     pipeline_logging.logger.info(
         "Extracting data from Findwork API and CSV files")
     df_jobs = extract_jobs(
-        findwork_api_client=findwork_api_client,
-        city_reference_path=config.get("city_reference_path"),
+        findwork_api_client=findwork_api_client #,
+        # city_reference_path=config.get("city_reference_path"),
     )
+    print(df_jobs)
     df_population = extract_population(
-        population_reference_path=config.get("population_reference_path")
+        population_reference_path= config.get("population_reference_path")
     )
+    print(df_population.head())
+    
     # transform
-    pipeline_logging.logger.info("Transforming dataframes")
-    df_transformed = transform(df_jobs=df_jobs, df_population=df_population)
-    # load
-    pipeline_logging.logger.info("Loading data to postgres")
-    postgresql_client = PostgreSqlClient(
-        server_name=SERVER_NAME,
-        database_name=DATABASE_NAME,
-        username=DB_USERNAME,
-        password=DB_PASSWORD,
-        port=PORT,
-    )
-    metadata = MetaData()
-    table = Table(
-        "findwork_data",
-        metadata,
-        Column("id", Integer, primary_key=True),
-        Column("datetime", String),
-        Column("city", String),
-        Column("job_title", String),
-        Column("job_description", String),
-        Column("job_salary", Float),
-        Column("population", Integer),
-    )
-    load(
-        df=df_transformed,
-        table=table,
-        postgresql_client=postgresql_client,
-        metadata=metadata,
-    )
-    pipeline_logging.logger.info("Pipeline run successful")
-    pipeline_logging.logger.info("Ending pipeline run")
+    # pipeline_logging.logger.info("Transforming dataframes")
+    # df_transformed = transform(df_jobs=df_jobs, df_population=df_population)
+    
+    # # load
+    # pipeline_logging.logger.info("Loading data to postgres")
+    # postgresql_client = PostgreSqlClient(
+    #     server_name=SERVER_NAME,
+    #     database_name=DATABASE_NAME,
+    #     username=DB_USERNAME,
+    #     password=DB_PASSWORD,
+    #     port=PORT,
+    # )
+    # metadata = MetaData()
+    # table = Table(
+    #     "findwork_data",
+    #     metadata,
+    #     Column("id", Integer, primary_key=True),
+    #     Column("datetime", String),
+    #     Column("city", String),
+    #     Column("job_title", String),
+    #     Column("job_description", String),
+    #     Column("job_salary", Float),
+    #     Column("population", Integer),
+    # )
+    # load(
+    #     df=df_transformed,
+    #     table=table,
+    #     postgresql_client=postgresql_client,
+    #     metadata=metadata,
+    # )
+    # pipeline_logging.logger.info("Pipeline run successful")
+    # pipeline_logging.logger.info("Ending pipeline run")
 
 
 def run_pipeline(

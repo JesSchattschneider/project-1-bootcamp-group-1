@@ -1,4 +1,4 @@
-from etl_project.connectors.postgresql import PostgreSqlClient
+from src.extract.connectors.postgresql import PostgreSqlClient
 from datetime import datetime, timezone
 from sqlalchemy import Table, Column, Integer, String, MetaData, JSON
 from sqlalchemy import insert, select, func
@@ -18,7 +18,7 @@ class MetaDataLogging:
         pipeline_name: str,
         postgresql_client: PostgreSqlClient,
         config: dict = {},
-        log_table_name: str = "pipeline_logs",
+        log_table_name: str = "pipeline_logs_project_1",
     ):
         self.pipeline_name = pipeline_name
         self.log_table_name = log_table_name
