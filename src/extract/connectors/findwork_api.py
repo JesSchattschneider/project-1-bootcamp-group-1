@@ -23,9 +23,15 @@ class FindWorkApiClient:
         Raises:
             Exception if response code is not 200.
         """
-        params = {"search": search_query, "page": page}
+        params = {}
+        # params = {"search": search_query, "page": page}
         if location:
             params["location"] = location
+        if search_query:
+            params["search"] = search_query
+        if page:
+            params["page"] = page
+        print(params)
         headers = {"Authorization": f"Token {self.api_key}"}
         response = requests.get(
             f"{self.base_url}/jobs/", params=params, headers=headers)
