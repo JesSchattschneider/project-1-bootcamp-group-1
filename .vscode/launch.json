@@ -11,8 +11,8 @@
 			"program": "${file}",
 			"console": "integratedTerminal",
 			//"cwd": "/Users/rckrbnnew/Desktop/2024/2024-04-bootcamp/01-python-etl/2/01-ins-modular-programming/solved" // Set the working directory to the "data" directory
-			//"cwd": "/Users/rckrbnnew/Desktop/group/project-1-bootcamp-group-1/src", // Set the working directory to the "data" directory
-			"cwd": "${fileDirname}",
+			"cwd": "/Users/rckrbnnew/Desktop/group/project-1-bootcamp-group-1/",
+			//"cwd": "${fileDirname}",
 			//"env": {}
 			"env": { "PYTHONPATH": "${workspaceRoot}:project-1-bootcamp-group-1/" }
 		}
