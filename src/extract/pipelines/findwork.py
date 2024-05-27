@@ -6,7 +6,8 @@ from sqlalchemy import Table, MetaData, Column, Integer, String, Float
 from src.extract.assets.findwork import (
     extract_population,
     extract_jobs,
-    transform,
+    transform_jobs,
+    transform_population,
     load,
 )
 
@@ -30,49 +31,95 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
     # extract
     pipeline_logging.logger.info(
         "Extracting data from Findwork API and CSV files")
+
+    # Define the search query
+    search_query = "data engineer"
+
+    # Extract jobs using the search query
     df_jobs = extract_jobs(
-        findwork_api_client=findwork_api_client #,
-        # city_reference_path=config.get("city_reference_path"),
-    )
-    print(df_jobs)
+        findwork_api_client=findwork_api_client, search_query=search_query)
+
+    # df_jobs = extract_jobs(
+    #     findwork_api_client=findwork_api_client  # ,
+    #     # city_reference_path=config.get("city_reference_path"),
+    # )
+
     df_population = extract_population(
-        population_reference_path= config.get("population_reference_path")
+        population_reference_path=config.get("population_reference_path")
     )
-    print(df_population.head())
-    
+
     # transform
-    # pipeline_logging.logger.info("Transforming dataframes")
-    # df_transformed = transform(df_jobs=df_jobs, df_population=df_population)
-    
-    # # load
-    # pipeline_logging.logger.info("Loading data to postgres")
-    # postgresql_client = PostgreSqlClient(
-    #     server_name=SERVER_NAME,
-    #     database_name=DATABASE_NAME,
-    #     username=DB_USERNAME,
-    #     password=DB_PASSWORD,
-    #     port=PORT,
-    # )
-    # metadata = MetaData()
-    # table = Table(
-    #     "findwork_data",
-    #     metadata,
-    #     Column("id", Integer, primary_key=True),
-    #     Column("datetime", String),
-    #     Column("city", String),
-    #     Column("job_title", String),
-    #     Column("job_description", String),
-    #     Column("job_salary", Float),
-    #     Column("population", Integer),
-    # )
-    # load(
-    #     df=df_transformed,
-    #     table=table,
-    #     postgresql_client=postgresql_client,
-    #     metadata=metadata,
-    # )
-    # pipeline_logging.logger.info("Pipeline run successful")
-    # pipeline_logging.logger.info("Ending pipeline run")
+    pipeline_logging.logger.info("Transforming jobs dataframe")
+    df_transformed_jobs = transform_jobs(df_jobs=df_jobs)
+    print(df_transformed_jobs)
+
+    # transform
+    pipeline_logging.logger.info("Transforming population dataframe")
+    df_transformed_population = transform_population(
+        df_population=df_population)
+    print(df_transformed_population)
+
+    # load
+    pipeline_logging.logger.info("Loading data to postgres")
+    postgresql_client = PostgreSqlClient(
+        server_name=os.environ.get("TARGET_SERVER_NAME"),
+        database_name=os.environ.get("TARGET_DATABASE_NAME"),
+        username=os.environ.get("TARGET_DB_USERNAME"),
+        password=os.environ.get("TARGET_DB_PASSWORD"),
+        port=os.environ.get("TARGET_PORT"),
+    )
+    metadata = MetaData()
+    table_findwork = Table(
+        "findwork_data",
+        metadata,
+        Column("job_id", String, primary_key=True),
+        Column("job_title", String),
+        Column("company_name", String),
+        Column("company_num_employees", String),
+        Column("employment_type", String),
+        Column("job_location", String),
+        Column("remote", String),
+        Column("logo", String),
+        Column("url", String),
+        Column("job_description", String),
+        Column("date_posted", String),
+        Column("keywords", String),
+        Column("source", String),
+    )
+
+    load(
+        df=df_transformed_jobs,
+        table=table_findwork,
+        postgresql_client=postgresql_client,
+        metadata=metadata,
+    )
+
+    metadata = MetaData()
+    table_population = Table(
+        "population_data",
+        metadata,
+        Column("population", Integer),
+        Column("pop2024", Integer),
+        Column("pop2023", Integer),
+        Column("city", String),
+        Column("country", String),
+        Column("growthRate", Float),
+        Column("type", String),
+        Column("rank", Integer),
+
+
+    )
+
+    load(
+        df=df_transformed_population,
+        table=table_population,
+        postgresql_client=postgresql_client,
+        metadata=metadata,
+        load_method="overwrite"
+    )
+
+    pipeline_logging.logger.info("Pipeline run successful")
+    pipeline_logging.logger.info("Ending pipeline run")
 
 
 def run_pipeline(

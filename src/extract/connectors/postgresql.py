@@ -67,3 +67,9 @@ class PostgreSqlClient:
             },
         )
         self.engine.execute(upsert_statement)
+
+    # function to check if records exist in the table
+    def record_exists(self, table: Table, primary_key: str, primary_key_value: str) -> bool:
+        query = table.select().where(table.c[primary_key] == primary_key_value)
+        result = self.engine.execute(query).fetchone()
+        return result is not None
