@@ -10,7 +10,9 @@ job_id
 , job_description
 , job_location
 , population
-from findwork_data),
+from findwork_data f
+join population_data p
+on f.job_location = p,city),
 
 job as (
 select
