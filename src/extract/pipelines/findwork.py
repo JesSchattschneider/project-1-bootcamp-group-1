@@ -1,11 +1,15 @@
+from jinja2 import Environment, FileSystemLoader
+from graphlib import TopologicalSorter
 from dotenv import load_dotenv
 import os
 from src.extract.connectors.findwork_api import FindWorkApiClient
 from src.extract.connectors.postgresql import PostgreSqlClient
-from sqlalchemy import Table, MetaData, Column, Integer, String, Float
+from sqlalchemy import Table, MetaData, Column, Integer, String, Float, PrimaryKeyConstraint, DateTime
 from src.extract.assets.findwork import (
     extract_population,
     extract_jobs,
+    SqlTransform,
+    transform,
     transform_jobs,
     transform_population,
     load,
@@ -21,6 +25,7 @@ import time
 
 def pipeline(config: dict, pipeline_logging: PipelineLogging):
     pipeline_logging.logger.info("Starting pipeline run")
+    
     # set up environment variables
     pipeline_logging.logger.info("Getting pipeline environment variables")
     API_KEY = os.environ.get("API_KEY")
@@ -33,34 +38,14 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         "Extracting data from Findwork API and CSV files")
 
     # Define the search query
-    search_query = "data engineer"
+    search_query = "data engineer" # todo: remove it as we are interested in all jobs
 
     # Extract jobs using the search query
     df_jobs = extract_jobs(
         findwork_api_client=findwork_api_client, search_query=search_query)
-
-    # df_jobs = extract_jobs(
-    #     findwork_api_client=findwork_api_client  # ,
-    #     # city_reference_path=config.get("city_reference_path"),
-    # )
-
-    df_population = extract_population(
-        population_reference_path=config.get("population_reference_path")
-    )
-
-    # transform
-    pipeline_logging.logger.info("Transforming jobs dataframe")
-    df_transformed_jobs = transform_jobs(df_jobs=df_jobs)
-    print(df_transformed_jobs)
-
-    # transform
-    pipeline_logging.logger.info("Transforming population dataframe")
-    df_transformed_population = transform_population(
-        df_population=df_population)
-    print(df_transformed_population)
-
+    
     # load
-    pipeline_logging.logger.info("Loading data to postgres")
+    pipeline_logging.logger.info("Loading raw findwork data to postgres")
     postgresql_client = PostgreSqlClient(
         server_name=os.environ.get("TARGET_SERVER_NAME"),
         database_name=os.environ.get("TARGET_DATABASE_NAME"),
@@ -68,31 +53,39 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         password=os.environ.get("TARGET_DB_PASSWORD"),
         port=os.environ.get("TARGET_PORT"),
     )
+
     metadata = MetaData()
-    table_findwork = Table(
-        "findwork_data",
+    table_findwork_raw = Table(
+        "findwork_data_raw",
         metadata,
-        Column("job_id", String, primary_key=True),
-        Column("job_title", String),
+        Column("id", String, primary_key=True),
+        Column("role", String),
         Column("company_name", String),
         Column("company_num_employees", String),
         Column("employment_type", String),
-        Column("job_location", String),
+        Column("location", String),
         Column("remote", String),
         Column("logo", String),
         Column("url", String),
-        Column("job_description", String),
+        Column("text", String),
         Column("date_posted", String),
         Column("keywords", String),
         Column("source", String),
     )
 
     load(
-        df=df_transformed_jobs,
-        table=table_findwork,
+        df=df_jobs,
+        table=table_findwork_raw,
         postgresql_client=postgresql_client,
         metadata=metadata,
     )
+    
+    # extract population data
+    df_population = extract_population(
+        population_reference_path=config.get("population_reference_path")
+    )
+
+    pipeline_logging.logger.info("Loading population data to postgres")
 
     metadata = MetaData()
     table_population = Table(
@@ -106,17 +99,97 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("growthRate", Float),
         Column("type", String),
         Column("rank", Integer),
-
-
     )
 
     load(
-        df=df_transformed_population,
+        df=df_population,
         table=table_population,
         postgresql_client=postgresql_client,
         metadata=metadata,
         load_method="overwrite"
     )
+
+    # transform
+    pipeline_logging.logger.info("Transforming jobs dataframe")
+    df_transformed_jobs = transform_jobs(df_jobs=df_jobs.head(50)) # TODO: remove head and speed up transformation
+    
+    # load
+    metadata = MetaData()
+    table_findwork = Table(
+        "findwork_data_clean",
+        metadata,
+        Column("job_id", String),
+        Column("job_title", String),
+        Column("company_name", String),
+        Column("company_num_employees", String),
+        Column("employment_type", String),
+        Column("job_location", String),
+        Column("remote", String),
+        Column("logo", String),
+        Column("url", String),
+        Column("job_description", String),
+        Column("date_posted", DateTime),
+        Column("keywords", String),
+        Column("source", String),
+        Column("city", String),
+        Column("country", String),
+        PrimaryKeyConstraint('job_id', 'job_title', name='findwork_data_clean_pkey')
+        # as we can have situations where the same job is posted multiple times
+    )
+    
+    load(
+        df=df_transformed_jobs,
+        table=table_findwork,
+        postgresql_client=postgresql_client,
+        metadata=metadata,
+        load_method="overwrite" # TODO: change to upsert!
+    )
+
+    pipeline_logging.logger.info("Transforming population dataframe")
+    df_population_transformed = transform_population(df_population=df_population.head(100)) # TODO: remove head and speed up transformation
+    
+    # load
+    metadata = MetaData()
+    table_population = Table(
+        "population_data_clean",
+        metadata,
+        Column("population", Integer),
+        Column("pop2024", Integer),
+        Column("pop2023", Integer),
+        Column("city", String),
+        Column("country", String),
+        Column("growthrate", Float),
+        Column("type", String),
+        Column("rank", Integer),
+    )
+
+    load(
+        df=df_population_transformed,
+        table=table_population,
+        postgresql_client=postgresql_client,
+        metadata=metadata,
+        load_method="overwrite" # TODO: change to upsert!
+    )
+
+    transform_template_environment = Environment(
+            loader=FileSystemLoader(
+                pipeline_config.get("config").get("transform_template_path")
+            )
+        )
+    
+    # create nodes
+    staging_common_employment_type = SqlTransform(
+            table_name="common_employment_type",
+            postgresql_client=postgresql_client,
+            environment=transform_template_environment,
+        )
+    
+    dag = TopologicalSorter()
+    dag.add(staging_common_employment_type)
+    
+    # run transform
+    pipeline_logging.logger.info("Perform transform")
+    transform(dag=dag)
 
     pipeline_logging.logger.info("Pipeline run successful")
     pipeline_logging.logger.info("Ending pipeline run")
