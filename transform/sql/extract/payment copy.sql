@@ -1,7 +1,6 @@
 {% set config = {
     "extract_type": "full",
-    "incremental_column": "payment_date",
-    "source_table_name": "payment"
+    "source_table_name": "findwork_data"
 } %}
 
 select
