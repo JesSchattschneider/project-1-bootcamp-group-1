@@ -17,6 +17,7 @@ import yaml
 from pathlib import Path
 import schedule
 import time
+import pandas as pd
 
 
 def pipeline(config: dict, pipeline_logging: PipelineLogging):
@@ -35,9 +36,23 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
     # Define the search query
     search_query = "data engineer"
 
-    # Extract jobs using the search query
-    df_jobs = extract_jobs(
-        findwork_api_client=findwork_api_client, search_query=search_query)
+    # extract all jobs
+    page = 1
+    all_jobs = pd.DataFrame()
+    location = None
+
+    while True:
+        df_jobs, has_more = extract_jobs(
+            findwork_api_client, search_query, location, page)
+        all_jobs = pd.concat([all_jobs, df_jobs], ignore_index=True)
+        count = len(all_jobs)
+        print(f"Total jobs: {count}")
+
+        if not has_more:
+            break
+        page += 1
+
+    df_jobs = all_jobs
 
     # df_jobs = extract_jobs(
     #     findwork_api_client=findwork_api_client  # ,
@@ -48,18 +63,18 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         population_reference_path=config.get("population_reference_path")
     )
 
-    # transform
+    # transform jobs
     pipeline_logging.logger.info("Transforming jobs dataframe")
     df_transformed_jobs = transform_jobs(df_jobs=df_jobs)
     print(df_transformed_jobs)
 
-    # transform
+    # transform population
     pipeline_logging.logger.info("Transforming population dataframe")
     df_transformed_population = transform_population(
         df_population=df_population)
     print(df_transformed_population)
 
-    # load
+    # load to postgres
     pipeline_logging.logger.info("Loading data to postgres")
     postgresql_client = PostgreSqlClient(
         server_name=os.environ.get("TARGET_SERVER_NAME"),
