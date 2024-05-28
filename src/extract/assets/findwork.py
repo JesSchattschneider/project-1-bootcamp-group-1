@@ -8,11 +8,11 @@ from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 from graphlib import TopologicalSorter
 import time
-
+from typing import Tuple
 
 def extract_jobs(
     findwork_api_client: FindWorkApiClient, search_query: str = None, location: str = None, page: int = 1
-) -> pd.DataFrame:
+) -> Tuple[pd.DataFrame, bool]:
     """
     Extract job listings based on the search query and location.
     """
@@ -35,9 +35,17 @@ def extract_jobs(
     # Print the number of job listings in the 'results' list
     print("Number of job listings in the 'results' list:",
           len(jobs_data['results']))
-    
-    return df_jobs_results
 
+    # print the value of jobs_data['next'] to see if there are more pages
+    print("Value of jobs_data['next']:", jobs_data['next'])
+
+    # if there are more pages, return True
+    if jobs_data['next'] is not None:
+        has_more = True
+    else:
+        has_more = False
+
+    return df_jobs_results, has_more
 
 def extract_population(population_reference_path: Path) -> pd.DataFrame:
     """Extracts data from the population file"""

@@ -21,6 +21,7 @@ import yaml
 from pathlib import Path
 import schedule
 import time
+import pandas as pd
 
 
 def pipeline(config: dict, pipeline_logging: PipelineLogging):
@@ -39,10 +40,24 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
 
     # Define the search query
     search_query = "data engineer" # todo: remove it as we are interested in all jobs
+    
+    # extract all jobs
+    page = 1
+    all_jobs = pd.DataFrame()
+    location = None
 
-    # Extract jobs using the search query
-    df_jobs = extract_jobs(
-        findwork_api_client=findwork_api_client, search_query=search_query)
+    while True:
+        df_jobs, has_more = extract_jobs(
+            findwork_api_client, search_query, location, page)
+        all_jobs = pd.concat([all_jobs, df_jobs], ignore_index=True)
+        count = len(all_jobs)
+        print(f"Total jobs: {count}")
+
+        if not has_more:
+            break
+        page += 1
+
+    df_jobs = all_jobs
     
     # load
     pipeline_logging.logger.info("Loading raw findwork data to postgres")
@@ -107,6 +122,7 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         postgresql_client=postgresql_client,
         metadata=metadata,
         load_method="overwrite"
+
     )
 
     # transform
