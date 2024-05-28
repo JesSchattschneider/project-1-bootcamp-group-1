@@ -105,7 +105,7 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("country", String),
         Column("growthRate", Float),
         Column("type", String),
-        Column("rank", Integer),
+        Column("rank", Integer,primary_key=True),
 
 
     )

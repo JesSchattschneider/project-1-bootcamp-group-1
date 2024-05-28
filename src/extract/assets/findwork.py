@@ -70,7 +70,8 @@ def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
 
                  }
     )
-
+    #convert the datetime field to standard datetime field
+    df_jobs_renamed["date_posted"] = pd.to_datetime(df_jobs_renamed["date_posted"])
     df_jobs_renamed["job_id"] = df_jobs_renamed["job_id"].astype(str)
     # df_jobs_renamed = df_jobs_renamed.set_index(["job_id"])
 

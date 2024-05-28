@@ -1,10 +1,12 @@
 {% set config = {
     "extract_type": "full",
+    "incremental_column": "date_posted",
     "source_table_name": "findwork_data"
 } %}
 
 select
-job_id
+date_posted
+, job_id
 , remote
 , company_name
 , employment_type

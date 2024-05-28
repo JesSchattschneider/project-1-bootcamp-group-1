@@ -16,6 +16,7 @@ def extract(
     extract_type = sql_template.make_module().config.get("extract_type")
     if extract_type == "full":
         sql = sql_template.render()
+        ##print(sql)
         return [dict(row) for row in source_engine.execute(sql).all()]
     elif extract_type == "incremental":
         # if target table exists :
@@ -107,11 +108,17 @@ def transform(engine: Engine, sql_template: Template, table_name: str):
 if __name__ == "__main__":
     load_dotenv()
 
-    SOURCE_DATABASE_NAME = os.environ.get("SOURCE_DATABASE_NAME")
-    SOURCE_SERVER_NAME = os.environ.get("SOURCE_SERVER_NAME")
-    SOURCE_DB_USERNAME = os.environ.get("SOURCE_DB_USERNAME")
-    SOURCE_DB_PASSWORD = os.environ.get("SOURCE_DB_PASSWORD")
-    SOURCE_PORT = os.environ.get("SOURCE_PORT")
+    SOURCE_DATABASE_NAME = os.environ.get("TARGET_DATABASE_NAME")
+    SOURCE_SERVER_NAME = os.environ.get("TARGET_SERVER_NAME")
+    SOURCE_DB_USERNAME = os.environ.get("TARGET_DB_USERNAME")
+    SOURCE_DB_PASSWORD = os.environ.get("TARGET_DB_PASSWORD")
+    SOURCE_PORT = os.environ.get("TARGET_PORT")
+
+    DEST_DATABASE_NAME = os.environ.get("DEST_DATABASE_NAME")
+    DEST_SERVER_NAME = os.environ.get("DEST_SERVER_NAME")
+    DEST_DB_USERNAME = os.environ.get("DEST_DB_USERNAME")
+    DEST_DB_PASSWORD = os.environ.get("DEST_DB_PASSWORD")
+    DEST_PORT = os.environ.get("DEST_PORT")
 
     source_connection_url = URL.create(
         drivername="postgresql+pg8000",
@@ -123,19 +130,14 @@ if __name__ == "__main__":
     )
     source_engine = create_engine(source_connection_url)
 
-    TARGET_DATABASE_NAME = os.environ.get("TARGET_DATABASE_NAME")
-    TARGET_SERVER_NAME = os.environ.get("TARGET_SERVER_NAME")
-    TARGET_DB_USERNAME = os.environ.get("TARGET_DB_USERNAME")
-    TARGET_DB_PASSWORD = os.environ.get("TARGET_DB_PASSWORD")
-    TARGET_PORT = os.environ.get("TARGET_PORT")
 
     target_connection_url = URL.create(
         drivername="postgresql+pg8000",
-        username=TARGET_DB_USERNAME,
-        password=TARGET_DB_PASSWORD,
-        host=TARGET_SERVER_NAME,
-        port=TARGET_PORT,
-        database=TARGET_DATABASE_NAME,
+        username=DEST_DB_USERNAME,
+        password=DEST_DB_PASSWORD,
+        host=DEST_SERVER_NAME,
+        port=DEST_PORT,
+        database=DEST_DATABASE_NAME,
     )
     target_engine = create_engine(target_connection_url)
 
