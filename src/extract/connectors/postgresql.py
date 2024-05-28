@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, MetaData
+from sqlalchemy import create_engine, Table, MetaData, Column, inspect
 from sqlalchemy.engine import URL, CursorResult
 from sqlalchemy.dialects import postgresql
 
@@ -33,8 +33,17 @@ class PostgreSqlClient:
 
         self.engine = create_engine(connection_url)
 
+    def execute_sql(self, sql: str) -> None:
+        self.engine.execute(sql)
+        
     def select_all(self, table: Table) -> list[dict]:
         return [dict(row) for row in self.engine.execute(table.select()).all()]
+    
+    def table_exists(self, table_name: str) -> bool:
+        """
+        Checks if the table already exists in the database.
+        """
+        return inspect(self.engine).has_table(table_name)
 
     def create_table(self, metadata: MetaData) -> None:
         """
