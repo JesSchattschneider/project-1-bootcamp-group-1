@@ -127,6 +127,11 @@ def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
                  "source": "source",
                  }
     )
+
+    #convert the datetime field to standard datetime field
+    df_jobs_renamed["date_posted"] = pd.to_datetime(df_jobs_renamed["date_posted"])
+
+
     df_jobs_renamed["job_id"] = df_jobs_renamed["job_id"].astype(str)
 
     # Set all columns to lowercase 

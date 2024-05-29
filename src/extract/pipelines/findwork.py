@@ -112,10 +112,12 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("country", String),
         Column("growthrate", Float),
         Column("type", String),
-        Column("rank", Integer),
+        Column("rank", Integer,primary_key=True),
         Column("location", String),
         Column("city_geopy", String),
         Column("country_geopy", String),
+        Column("rank", Integer,primary_key=True),
+
     )
 
     load(
