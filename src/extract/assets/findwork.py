@@ -9,6 +9,7 @@ from geopy.exc import GeocoderTimedOut
 from graphlib import TopologicalSorter
 import time
 from typing import Tuple
+import numpy as np
 
 def extract_jobs(
     findwork_api_client: FindWorkApiClient, search_query: str = None, location: str = None, page: int = 1
@@ -53,20 +54,20 @@ def extract_population(population_reference_path: Path) -> pd.DataFrame:
     return df_population
 
 # Initialize geocoder with a longer timeout
-geolocator = Nominatim(user_agent="job_location_parser", timeout=1)
+geolocator = Nominatim(user_agent="job_location_parser")
 
 def _parse_location(location):
     # Handle NA or None values
     if pd.isna(location) or location.upper() == "NA":
-        return ("Unknown", "Unknown")
+        return (np.nan, np.nan)
 
     # Handle remote jobs separately
     if "REMOTE" in location.upper():
-        return ("Remote", "Remote")
+        return (np.nan, np.nan)
     
     # Handle remote jobs with no location specified separately
     if location.upper() == "NONE":
-        return ("Unknown", "Unknown")
+        return (np.nan, np.nan)
 
     attempt = 0
     while attempt < 5:
@@ -76,9 +77,16 @@ def _parse_location(location):
             if location_geo:
                 # Split the address into components
                 address_parts = location_geo.address.split(',')
+                # Extract the relevant parts
                 country = address_parts[-1].strip()
-                # Assume the city is the second to last part
-                city = address_parts[-3].strip() if len(address_parts) > 2 else address_parts[0].strip()
+                city = address_parts[0].strip() if len(address_parts) > 0 else "Unknown"
+                
+                # Check for administrative areas in the address parts
+                if len(address_parts) > 2:
+                    if any(keyword in address_parts[-3].lower() for keyword in ["city", "town", "village", "municipality"]):
+                        city = address_parts[-3].strip()
+                    elif any(keyword in address_parts[-2].lower() for keyword in ["city", "town", "village", "municipality"]):
+                        city = address_parts[-2].strip()
                 return (city, country)
             else:
                 return ("Unknown", "Unknown")
@@ -93,7 +101,14 @@ def _parse_location(location):
 
 
 def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
-    """Transform the raw dataframes."""
+    """Transform the raw dataframes.
+    -- city_geopy and country_geopy are na if:
+        -- job_location contains the work "remote"
+        -- if location = none
+
+    -- city_geopy and country_geopy unknown if:
+        -- address did not return a valid address by geopy
+    """
     pd.options.mode.chained_assignment = None  # default='warn'
 
     df_jobs_renamed = df_jobs.rename(
@@ -116,16 +131,31 @@ def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
 
     # Set all columns to lowercase 
     df_jobs_renamed.columns = map(str.lower, df_jobs_renamed.columns)
-
-    # Handle location column
-    df_jobs_renamed[['city', 'country']] = df_jobs_renamed['job_location'].apply(lambda x: pd.Series(_parse_location(x)))
-
     # Set values in all columns to lowercase
     df_jobs_renamed = df_jobs_renamed.apply(lambda x: x.astype(str).str.lower())
 
-    df_jobs_renamed.to_csv("jobs.csv", index=False)
+    #### Handle location column - create a table to map the original location to the city and country
 
-    return df_jobs_renamed
+    # remove job_location = none
+    fw_data = df_jobs_renamed[df_jobs_renamed['job_location'] != "none"]
+
+    # remove job_location = nan
+    fw_data = fw_data[fw_data['job_location'].notna()]
+
+    # get only unique locations
+    map_location = fw_data.drop_duplicates(subset=['job_location'])
+    
+    map_location[['city_geopy', 'country_geopy']] = map_location['job_location'].apply(lambda x: pd.Series(_parse_location(x)))
+    
+    # Set values in all columns to lowercase
+    map_location = map_location.apply(lambda x: x.astype(str).str.lower())
+    
+    map_location = map_location[['job_location', 'city_geopy', 'country_geopy']]
+    
+    res = pd.merge(df_jobs_renamed, map_location, on='job_location', how='left')
+
+    return res
+
 class SqlTransform:
     def __init__(
         self,
