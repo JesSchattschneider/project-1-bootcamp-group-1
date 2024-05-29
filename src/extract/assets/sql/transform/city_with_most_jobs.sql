@@ -12,7 +12,7 @@ SELECT
 FROM
     findwork_data_clean f
 LEFT JOIN
-    population_data_clean p ON f.city = p.city AND f.country = p.country
+    population_data_clean p ON f.city_geopy = p.city_geopy AND f.country_geopy = p.country_geopy
 GROUP BY
     p.population,
     p.pop2024,
