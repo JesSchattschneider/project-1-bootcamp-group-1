@@ -1,1 +1,0 @@
--- two extract types: full and incremental
