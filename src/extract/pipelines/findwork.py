@@ -26,40 +26,10 @@ import pandas as pd
 def pipeline(config: dict, pipeline_logging: PipelineLogging):
     pipeline_logging.logger.info("Starting pipeline run")
     
-    # set up environment variables
+    # Section 0: set up environment variables
+    # ----------------------------------------
     pipeline_logging.logger.info("Getting pipeline environment variables")
     API_KEY = os.environ.get("API_KEY")
-
-    pipeline_logging.logger.info("Creating Findwork API client")
-    findwork_api_client = FindWorkApiClient(api_key=API_KEY)
-
-    # extract
-    pipeline_logging.logger.info(
-        "Extracting data from Findwork API and CSV files")
-
-    # Define the search query
-    search_query = "data engineer" # todo: remove it as we are interested in all jobs
-    
-    # extract all jobs
-    page = 1
-    all_jobs = pd.DataFrame()
-    location = None
-
-    while True:
-        df_jobs, has_more = extract_jobs(
-            findwork_api_client, search_query, location, page)
-        all_jobs = pd.concat([all_jobs, df_jobs], ignore_index=True)
-        count = len(all_jobs)
-        print(f"Total jobs: {count}")
-
-        if not has_more:
-            break
-        page += 1
-
-    df_jobs = all_jobs
-    
-    # load
-    pipeline_logging.logger.info("Loading raw findwork data to postgres")
     postgresql_client = PostgreSqlClient(
         server_name=os.environ.get("TARGET_SERVER_NAME"),
         database_name=os.environ.get("TARGET_DATABASE_NAME"),
@@ -68,9 +38,55 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         port=os.environ.get("TARGET_PORT"),
     )
 
+    pipeline_logging.logger.info("Creating Findwork API client")
+    findwork_api_client = FindWorkApiClient(api_key=API_KEY)
+    
+    # Section 1: Extract
+    # ----------------------------------------
+
+    pipeline_logging.logger.info("Checking if tables already exist in the database")
+    findwork_data_table_status = postgresql_client.table_exists("findwork_data")
+
+    pipeline_logging.logger.info(
+        "Extracting data from Findwork API and CSV files to data warehouse database")
+
+    # Define the search query
+    search_query = "data engineer"
+    page = 1
+    all_jobs = pd.DataFrame()
+    location = None
+
+    if findwork_data_table_status: # same as findwork_data_table_status == True
+        pipeline_logging.logger.info(
+        "findwork_data table already exists, extracting only jobs from the first page")
+        page = 1
+        df_jobs = extract_jobs(
+            findwork_api_client, search_query, location, page)[0]
+        
+    else:
+        pipeline_logging.logger.info(
+        "findwork_data table does not exist, extracting all jobs from all pages")
+        while True:
+            df_jobs, has_more = extract_jobs(
+                findwork_api_client, search_query, location, page)
+            all_jobs = pd.concat([all_jobs, df_jobs], ignore_index=True)
+            count = len(all_jobs)
+            print(f"Total jobs: {count}")
+
+            if not has_more:
+                break
+            page += 1
+
+        df_jobs = all_jobs
+    
+    # Section 2: Load raw findwork data
+    # -------------------------
+
+    pipeline_logging.logger.info("Loading raw findwork data to postgres")
+
     metadata = MetaData()
     table_findwork_raw = Table(
-        "findwork_data_raw",
+        "findwork_data",
         metadata,
         Column("id", String, primary_key=True),
         Column("role", String),
@@ -93,8 +109,10 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         postgresql_client=postgresql_client,
         metadata=metadata,
     )
-    
-    # extract population data
+
+    # Section 3: Extract population data
+    # -------------------------
+
     df_population = extract_population(
         population_reference_path=config.get("population_reference_path")
     )
@@ -112,13 +130,14 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("country", String),
         Column("growthrate", Float),
         Column("type", String),
-        Column("rank", Integer,primary_key=True),
         Column("location", String),
         Column("city_geopy", String),
         Column("country_geopy", String),
         Column("rank", Integer,primary_key=True),
-
     )
+
+    # Section 4: Load raw population data
+    # -------------------------
 
     load(
         df=df_population,
@@ -126,17 +145,17 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         postgresql_client=postgresql_client,
         metadata=metadata,
         load_method="overwrite"
-
     )
 
-    # transform
-    pipeline_logging.logger.info("Transforming jobs dataframe")
-    df_transformed_jobs = transform_jobs(df_jobs=df_jobs) 
+    # Section 4: Transform jobs data - standardize location - python method
+    # -------------------------
+
+    pipeline_logging.logger.info("Transforming jobs dataframe using geopy for standardizing location")
     
-    # load
+    df_transformed_jobs = transform_jobs(df_jobs=df_jobs)
     metadata = MetaData()
     table_findwork = Table(
-        "findwork_data_clean",
+        "findwork_data_transformed",
         metadata,
         Column("job_id", String),
         Column("job_title", String),
@@ -156,14 +175,21 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         PrimaryKeyConstraint('job_id', 'job_title', name='findwork_data_clean_pkey')
         # as we can have situations where the same job is posted multiple times
     )
-    
+
+    # Section 5: Load transformed jobs data
+    # -------------------------
+        
     load(
         df=df_transformed_jobs,
         table=table_findwork,
         postgresql_client=postgresql_client,
-        metadata=metadata,
-        load_method="overwrite" # TODO: change to upsert!
+        metadata=metadata
     )
+
+    # Section 6: Transforming dataframe using Jinja2 templates
+    # -------------------------
+
+    pipeline_logging.logger.info("Transforming dataframe using Jinja2 templates")
 
     transform_template_environment = Environment(
             loader=FileSystemLoader(
@@ -172,14 +198,28 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         )
     
     # create nodes
-    staging_common_employment_type = SqlTransform(
-            table_name="common_employment_type",
+    serving_findwork_data = SqlTransform(
+            table_name="serving_findwork_data",
+            postgresql_client=postgresql_client,
+            environment=transform_template_environment,
+        )
+    
+    serving_population_data = SqlTransform(
+            table_name="serving_population_data",
+            postgresql_client=postgresql_client,
+            environment=transform_template_environment,
+        )
+    
+    serving_number_of_jobs_per_location = SqlTransform(
+            table_name="serving_number_of_jobs_per_location",
             postgresql_client=postgresql_client,
             environment=transform_template_environment,
         )
     
     dag = TopologicalSorter()
-    dag.add(staging_common_employment_type)
+    dag.add(serving_findwork_data)
+    dag.add(serving_population_data)
+    dag.add(serving_number_of_jobs_per_location, serving_findwork_data, serving_population_data)
     
     # run transform
     pipeline_logging.logger.info("Perform transform")
