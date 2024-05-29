@@ -18,7 +18,7 @@ class MetaDataLogging:
         pipeline_name: str,
         postgresql_client: PostgreSqlClient,
         config: dict = {},
-        log_table_name: str = "pipeline_logs_project_1",
+        log_table_name: str = "pipeline_logs",
     ):
         self.pipeline_name = pipeline_name
         self.log_table_name = log_table_name

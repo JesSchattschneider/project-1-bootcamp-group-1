@@ -90,3 +90,27 @@ Some locations like the ones printed below could not be found, therefore, were r
 The reverse geocoding technique applied to the original population dataset is in the `..` notebook.
 
 The findwork location also have to go through the reverse geocoding step but as we do not have many locations on this response we can do it as one of the transform steps in the pipeline.
+
+## Run dockerfile
+
+Build and run container
+
+`docker build -t findwork_image .`
+`docker run --name findwork_container findwork_image`
+
+Check logs
+
+`docker logs findwork_container`
+
+Access container
+
+`docker exec -it findwork_container /bin/sh`
+
+Run pipeline
+
+`python -m extract.pipelines.findwork`
+
+Stop and remove container
+
+`docker stop findwork_container`
+`docker rm findwork_container`
