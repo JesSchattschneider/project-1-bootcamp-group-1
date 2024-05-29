@@ -11,7 +11,6 @@ from src.extract.assets.findwork import (
     SqlTransform,
     transform,
     transform_jobs,
-    transform_population,
     load,
 )
 
@@ -111,9 +110,12 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("pop2023", Integer),
         Column("city", String),
         Column("country", String),
-        Column("growthRate", Float),
+        Column("growthrate", Float),
         Column("type", String),
         Column("rank", Integer),
+        Column("location", String),
+        Column("city_geopy", String),
+        Column("country_geopy", String),
     )
 
     load(
@@ -127,7 +129,7 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
 
     # transform
     pipeline_logging.logger.info("Transforming jobs dataframe")
-    df_transformed_jobs = transform_jobs(df_jobs=df_jobs.head(50)) # TODO: remove head and speed up transformation
+    df_transformed_jobs = transform_jobs(df_jobs=df_jobs) 
     
     # load
     metadata = MetaData()
@@ -147,8 +149,8 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
         Column("date_posted", DateTime),
         Column("keywords", String),
         Column("source", String),
-        Column("city", String),
-        Column("country", String),
+        Column("city_geopy", String),
+        Column("country_geopy", String),
         PrimaryKeyConstraint('job_id', 'job_title', name='findwork_data_clean_pkey')
         # as we can have situations where the same job is posted multiple times
     )
@@ -156,32 +158,6 @@ def pipeline(config: dict, pipeline_logging: PipelineLogging):
     load(
         df=df_transformed_jobs,
         table=table_findwork,
-        postgresql_client=postgresql_client,
-        metadata=metadata,
-        load_method="overwrite" # TODO: change to upsert!
-    )
-
-    pipeline_logging.logger.info("Transforming population dataframe")
-    df_population_transformed = transform_population(df_population=df_population.head(100)) # TODO: remove head and speed up transformation
-    
-    # load
-    metadata = MetaData()
-    table_population = Table(
-        "population_data_clean",
-        metadata,
-        Column("population", Integer),
-        Column("pop2024", Integer),
-        Column("pop2023", Integer),
-        Column("city", String),
-        Column("country", String),
-        Column("growthrate", Float),
-        Column("type", String),
-        Column("rank", Integer),
-    )
-
-    load(
-        df=df_population_transformed,
-        table=table_population,
         postgresql_client=postgresql_client,
         metadata=metadata,
         load_method="overwrite" # TODO: change to upsert!

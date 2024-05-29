@@ -1,6 +1,6 @@
 name: jobs_etl
 config: 
-  population_reference_path: "./src/extract/data/world-city-listing-table.csv"
+  population_reference_path: "./src/extract/data/world-city-listing-table-geopy-clean.csv"
   log_folder_path: "./src/extract/logs"
   transform_template_path: "./src/extract/assets/sql/transform"
 schedule:

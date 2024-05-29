@@ -1,0 +1,794 @@
+population,pop2024,pop2023,city,country,growthrate,type,rank,location,city_geopy,country_geopy
+37115035,37115035,37194105,tokyo,japan,-0.0021,w,1,"tokyo, japan",tokyo,japan
+33807403,33807403,32941309,delhi,india,0.0263,w,2,"delhi, india",delhi,india
+29867918,29867918,29210808,shanghai,china,0.0225,w,3,"shanghai, china",shanghai,china
+23935652,23935652,23209616,dhaka,bangladesh,0.0313,w,4,"dhaka, bangladesh",dhaka,bangladesh
+22806704,22806704,22619736,sao paulo,brazil,0.0083,w,5,"sao paulo, brazil",são paulo,brazil
+22623874,22623874,22183201,cairo,egypt,0.0199,w,6,"cairo, egypt",cairo,egypt
+22505315,22505315,22281442,mexico city,mexico,0.01,w,7,"mexico city, mexico",mexico city,mexico
+22189082,22189082,21766214,beijing,china,0.0194,w,8,"beijing, china",beijing,china
+21673149,21673149,21296517,mumbai,india,0.0177,w,9,"mumbai, india",mumbai,india
+18967459,18967459,19013434,osaka,japan,-0.0024,w,10,"osaka, japan",osaka,japan
+17773923,17773923,17340704,chongqing,china,0.025,w,11,"chongqing, china",chongqing,china
+17648555,17648555,17236230,karachi,pakistan,0.0239,w,12,"karachi, pakistan",karachi division,pakistan
+17032322,17032322,16315534,kinshasa,dr congo,0.0439,w,13,"kinshasa, dr congo",kinshasa,democratic republic of the congo
+16536018,16536018,15945912,lagos,nigeria,0.037,w,14,"lagos, nigeria",lagos,nigeria
+16047350,16047350,15847768,istanbul,turkey,0.0126,w,15,"istanbul, turkey",istanbul,turkey
+15618288,15618288,15490415,buenos aires,argentina,0.0083,w,16,"buenos aires, argentina",autonomous city of buenos aires,argentina
+15570786,15570786,15332793,kolkata,india,0.0155,w,17,"kolkata, india",kolkata,india
+14941953,14941953,14667089,manila,philippines,0.0187,w,18,"manila, philippines",manila,philippines
+14590096,14590096,14284353,guangzhou,china,0.0214,w,19,"guangzhou, china",guangzhou city,china
+14470873,14470873,14238643,tianjin,china,0.0163,w,20,"tianjin, china",tianjin,china
+14407074,14407074,13979390,lahore,pakistan,0.0306,w,21,"lahore, pakistan",lahore,pakistan
+14008262,14008262,13607800,bangalore,india,0.0294,w,22,"bangalore, india",bengaluru,india
+13824347,13824347,13727720,rio de janeiro,brazil,0.007,w,23,"rio de janeiro, brazil",rio de janeiro,brazil
+13311855,13311855,13072633,shenzhen,china,0.0183,w,24,"shenzhen, china",shenzhen,china
+12712305,12712305,12680389,moscow,russia,0.0025,w,25,"moscow, russia",moscow,russia
+12053697,12053697,11776147,chennai,india,0.0236,w,26,"chennai, india",chennai,india
+11658211,11658211,11507960,bogota,colombia,0.0131,w,27,"bogota, colombia",bogota capital district - municipality,colombia
+11436004,11436004,11248839,jakarta,indonesia,0.0166,w,28,"jakarta, indonesia",special region of jakarta,indonesia
+11361938,11361938,11204382,lima,peru,0.0141,w,29,"lima, peru",lima metropolitan area,peru
+11276701,11276701,11208440,paris,france,0.0061,w,30,"paris, france",paris,france
+11233869,11233869,11069982,bangkok,thailand,0.0148,w,31,"bangkok, thailand",bangkok,thailand
+11068877,11068877,10801163,hyderabad,india,0.0248,w,32,"hyderabad, india",hyderabad,india
+10004840,10004840,9988049,seoul,south korea,0.0017,w,33,"seoul, south korea",seoul,south korea
+9947548,9947548,9698464,nanjing,china,0.0257,w,34,"nanjing, china",nanjing city,china
+9828110,9828110,9653772,chengdu,china,0.0181,w,35,"chengdu, china",chengdu,china
+9748033,9748033,9648110,london,united kingdom,0.0104,w,36,"london, united kingdom",london,united kingdom
+9651032,9651032,9292336,luanda,angola,0.0386,w,37,"luanda, angola",municipality of luanda,angola
+9616007,9616007,9499781,tehran,iran,0.0122,w,38,"tehran, iran",tehran,iran
+9567656,9567656,9320866,ho chi minh city,vietnam,0.0265,w,39,"ho chi minh city, vietnam",ho chi minh city,vietnam
+9556879,9556879,9569328,nagoya,japan,-0.0013,w,40,"nagoya, japan",nagoya,japan
+9013837,9013837,8785174,xi-an shaanxi,china,0.026,w,41,"xi-an shaanxi, china",xi'an,china
+8854444,8854444,8650605,ahmedabad,india,0.0236,w,42,"ahmedabad, india",ahmedabad,india
+8850850,8850850,8718250,wuhan,china,0.0152,w,43,"wuhan, china",wuhan,china
+8815630,8815630,8621724,kuala lumpur,malaysia,0.0225,w,44,"kuala lumpur, malaysia",kuala lumpur,malaysia
+8419842,8419842,8237206,hangzhou,china,0.0222,w,45,"hangzhou, china",hangzhou city,china
+8350625,8350625,8074031,suzhou,china,0.0343,w,46,"suzhou, china",suzhou city,china
+8330528,8330528,8064949,surat,india,0.0329,w,47,"surat, india",surat,india
+8161231,8161231,7775865,dar es salaam,tanzania,0.0496,w,48,"dar es salaam, tanzania",dar es-salaam,tanzania
+7931147,7931147,8133522,new york,united states,-0.0249,us,49,"new york, united states",new york,united states
+7921134,7921134,7711305,baghdad,iraq,0.0272,w,50,"baghdad, iraq",green zone municipality,iraq
+7830377,7830377,7680967,shenyang,china,0.0195,w,51,"shenyang, china",shenyang city,china
+7820551,7820551,7682430,riyadh,saudi arabia,0.018,w,52,"riyadh, saudi arabia",riyadh,saudi arabia
+7725859,7725859,7684801,hong kong,hong kong,0.0053,w,53,"hong kong, hong kong",hong kong island,china
+7704935,7704935,7597386,foshan,china,0.0142,w,54,"foshan, china",foshan,china
+7675146,7675146,7587049,dongguan,china,0.0116,w,55,"dongguan, china",dongguan,china
+7345848,7345848,7166374,pune,india,0.025,w,56,"pune, india",pune,india
+6950952,6950952,6903392,santiago,chile,0.0069,w,57,"santiago, chile",santiago,chile
+6938008,6938008,6803811,haerbin,china,0.0197,w,58,"haerbin, china",haerbin road,china
+6783241,6783241,6751374,madrid,spain,0.0047,w,59,"madrid, spain",madrid,spain
+6542070,6542070,6344348,khartoum,sudan,0.0312,w,60,"khartoum, sudan",khartoum,sudan
+6431430,6431430,6371958,toronto,canada,0.0093,w,61,"toronto, canada",toronto,canada
+6324351,6324351,6198016,johannesburg,south africa,0.0204,w,62,"johannesburg, south africa",johannesburg,south africa
+6300409,6300409,6247889,belo horizonte,brazil,0.0084,w,63,"belo horizonte, brazil",belo horizonte,brazil
+6217487,6217487,6077995,dalian,china,0.023,w,64,"dalian, china",dalian,china
+6119203,6119203,6080859,singapore,singapore,0.0063,w,65,"singapore, singapore",singapore,singapore
+6104597,6104597,5986525,qingdao,china,0.0197,w,66,"qingdao, china",qingdao,china
+6014887,6014887,5859272,zhengzhou,china,0.0266,w,67,"zhengzhou, china",chongzuo city,china
+5940698,5940698,5806031,ji-nan shandong,china,0.0232,w,68,"ji-nan shandong, china",shandong experimental high school,china
+5866704,5866704,5686350,abidjan,ivory coast,0.0317,w,69,"abidjan, ivory coast",abidjan,côte d'ivoire
+5711917,5711917,5687356,barcelona,spain,0.0043,w,70,"barcelona, spain",barcelona,spain
+5709678,5709678,5610241,yangon,myanmar,0.0177,w,71,"yangon, myanmar",yangon,myanmar
+5703628,5703628,5460591,addis ababa,ethiopia,0.0445,w,72,"addis ababa, ethiopia",addis ababa,ethiopia
+5696131,5696131,5588477,alexandria,egypt,0.0193,w,73,"alexandria, egypt",alexandria,egypt
+5581707,5581707,5561294,saint petersburg,russia,0.0037,w,74,"saint petersburg, russia",saint petersburg,russia
+5541172,5541172,5325160,nairobi,kenya,0.0406,w,75,"nairobi, kenya",nairobi,kenya
+5513609,5513609,5379660,chittagong,bangladesh,0.0249,w,76,"chittagong, bangladesh",chattogram,bangladesh
+5499678,5499678,5419880,guadalajara,mexico,0.0147,w,77,"guadalajara, mexico",guadalajara,mexico
+5478076,5478076,5490271,fukuoka,japan,-0.0022,w,78,"fukuoka, japan",fukuoka prefecture,japan
+5477087,5477087,5397098,ankara,turkey,0.0148,w,79,"ankara, turkey",ankara,turkey
+5431801,5431801,5253385,hanoi,vietnam,0.034,w,80,"hanoi, vietnam",hà nội,vietnam
+5315600,5315600,5235407,melbourne,australia,0.0153,w,81,"melbourne, australia",city of melbourne,australia
+5195355,5195355,5116647,monterrey,mexico,0.0154,w,82,"monterrey, mexico",monterrey,mexico
+5184896,5184896,5120894,sydney,australia,0.0125,w,83,"sydney, australia",council of the city of sydney,australia
+5027975,5027975,4921487,changsha,china,0.0216,w,84,"changsha, china",changsha,china
+5005964,5005964,4865038,urumqi,china,0.029,w,85,"urumqi, china",ürümqi county,china
+4977833,4977833,4890280,cape town,south africa,0.0179,w,86,"cape town, south africa",cape town,south africa
+4943210,4943210,4862941,jiddah,saudi arabia,0.0165,w,87,"jiddah, saudi arabia",jeddah,saudi arabia
+4935274,4935274,4873048,brasilia,brazil,0.0128,w,88,"brasilia, brazil",brazil,brazil
+4861079,4861079,4761284,kunming,china,0.021,w,89,"kunming, china",kunming,china
+4802447,4802447,4710382,changchun,china,0.0195,w,90,"changchun, china",changchun city,china
+4728384,4728384,4588666,kabul,afghanistan,0.0304,w,91,"kabul, afghanistan",kabul,afghanistan
+4727290,4727290,4615758,hefei,china,0.0242,w,92,"hefei, china",hefei,china
+4681768,4681768,4509287,yaounde,cameroon,0.0383,w,93,"yaounde, cameroon",yaoundé,cameroon
+4659830,4659830,4537901,ningbo,china,0.0269,w,94,"ningbo, china",ningbo,china
+4656525,4656525,4573713,shantou,china,0.0181,w,95,"shantou, china",shantou,china
+4534877,4534877,4504147,new taipei,taiwan,0.0068,w,96,"new taipei, taiwan",new taipei,taiwan
+4495727,4495727,4420855,tel aviv,israel,0.0169,w,97,"tel aviv, israel",tel-aviv,israel
+4490734,4490734,4348481,kano,nigeria,0.0327,w,98,"kano, nigeria",kano state,nigeria
+4454132,4454132,4370473,shijiazhuang,china,0.0191,w,99,"shijiazhuang, china",shijiazhuang,china
+4341638,4341638,4307958,montreal,canada,0.0078,w,100,"montreal, canada",montreal,canada
+4331974,4331974,4315671,rome,italy,0.0038,w,101,"rome, italy",rome,italy
+4308510,4308510,4207084,jaipur,india,0.0241,w,102,"jaipur, india",jaipur,india
+4305127,4305127,4263940,recife,brazil,0.0097,w,103,"recife, brazil",recife,brazil
+4291463,4291463,4191890,nanning,china,0.0238,w,104,"nanning, china",nanning,china
+4246399,4246399,4206240,fortaleza,brazil,0.0095,w,105,"fortaleza, brazil",fortaleza,brazil
+4243962,4243962,4088555,kozhikode,india,0.038,w,106,"kozhikode, india",kozhikode,india
+4239867,4239867,4211933,porto alegre,brazil,0.0066,w,107,"porto alegre, brazil",porto alegre,brazil
+4226782,4226782,4145010,taiyuan shanxi,china,0.0197,w,108,"taiyuan shanxi, china",taiyuan,china
+4203108,4203108,4063200,douala,cameroon,0.0344,w,109,"douala, cameroon",douala,cameroon
+4190832,4190832,4118327,ekurhuleni,south africa,0.0176,w,110,"ekurhuleni, south africa",city of ekurhuleni metropolitan municipality,south africa
+4184921,4184921,4009087,malappuram,india,0.0439,w,111,"malappuram, india",malappuram,india
+4137386,4137386,4102308,medellin,colombia,0.0086,w,112,"medellin, colombia",medellín,colombia
+4085502,4085502,3981658,changzhou,china,0.0261,w,113,"changzhou, china",changzhou,china
+4050826,4050826,3846102,kampala,uganda,0.0532,w,114,"kampala, uganda",kampala,uganda
+4048666,4048666,3872264,antananarivo,madagascar,0.0456,w,115,"antananarivo, madagascar",antananarivo,madagascar
+4038214,4038214,3945409,lucknow,india,0.0235,w,116,"lucknow, india",lucknow,india
+4025735,4025735,3839646,abuja,nigeria,0.0485,w,117,"abuja, nigeria",abuja,nigeria
+4016037,4016037,3920379,nanchang,china,0.0244,w,118,"nanchang, china",nanchang,china
+4009531,4009531,3919724,wenzhou,china,0.0229,w,119,"wenzhou, china",wenzhou,china
+4007468,4007468,3935484,xiamen,china,0.0183,w,120,"xiamen, china",xiamen,china
+4004316,4004316,3874908,ibadan,nigeria,0.0334,w,121,"ibadan, nigeria",ibadan,nigeria
+3998754,3998754,3922202,fuzhou fujian,china,0.0195,w,122,"fuzhou fujian, china",fuzhou city,china
+3994982,3994982,3958384,salvador,brazil,0.0092,w,123,"salvador, brazil",salvador,brazil
+3950408,3950408,3892837,casablanca,morocco,0.0148,w,124,"casablanca, morocco",casablanca,morocco
+3925206,3925206,3814702,tangshan hebei,china,0.029,w,125,"tangshan hebei, china",tangshan,china
+3903481,3903481,3768239,kumasi,ghana,0.0359,w,126,"kumasi, ghana",kumasi,ghana
+3852459,3852459,3813082,curitiba,brazil,0.0103,w,127,"curitiba, brazil",curitiba,brazil
+3830678,3830678,3729351,bekasi,indonesia,0.0272,w,128,"bekasi, indonesia",bekasi,indonesia
+3800193,3800193,3710845,faisalabad,pakistan,0.0241,w,129,"faisalabad, pakistan",faisalabad city tehsil,pakistan
+3748640,3748640,3785439,los angeles,united states,-0.0097,us,130,"los angeles, united states",los angeles,united states
+3661446,3661446,3580904,guiyang,china,0.0225,w,131,"guiyang, china",guiyang county,china
+3636547,3636547,3480101,port harcourt,nigeria,0.045,w,132,"port harcourt, nigeria",port-harcourt,nigeria
+3605238,3605238,3482456,thrissur,india,0.0353,w,133,"thrissur, india",thrissur,india
+3587402,3587402,3523890,santo domingo,dominican republic,0.018,w,134,"santo domingo, dominican republic",santo domingo,dominican republic
+3576873,3576873,3573938,berlin,germany,0.0008,w,135,"berlin, germany",berlin,germany
+3568830,3568830,3510511,asuncion,paraguay,0.0166,w,136,"asuncion, paraguay",asuncion,paraguay
+3540462,3540462,3429536,dakar,senegal,0.0323,w,137,"dakar, senegal",dakar,senegal
+3507053,3507053,3406055,kochi,india,0.0297,w,138,"kochi, india",kochi,india
+3498740,3498740,3437346,wuxi,china,0.0179,w,139,"wuxi, china",wuxi city,china
+3477419,3477419,3471949,busan,south korea,0.0016,w,140,"busan, south korea",busan,south korea
+3458441,3458441,3422796,campinas,brazil,0.0104,w,141,"campinas, brazil",campinas,brazil
+3415532,3415532,3367852,mashhad,iran,0.0142,w,142,"mashhad, iran",mashhad,iran
+3407814,3407814,3292497,sanaa,yemen,0.035,w,143,"sanaa, yemen",sana'a,yemen
+3394342,3394342,3344761,puebla,mexico,0.0148,w,144,"puebla, mexico",puebla,mexico
+3393380,3393380,3302077,indore,india,0.0277,w,145,"indore, india",indore,india
+3365910,3365910,3297528,lanzhou,china,0.0207,w,146,"lanzhou, china",lanzhou,china
+3358934,3358934,3203923,ouagadougou,burkina faso,0.0484,w,147,"ouagadougou, burkina faso",ouagadougou,burkina faso
+3353602,3353602,3297759,kuwait city,kuwait,0.0169,w,148,"kuwait city, kuwait",kuwait city,kuwait
+3324219,3324219,3181250,lusaka,zambia,0.0449,w,149,"lusaka, zambia",lusaka province,zambia
+3286142,3286142,3234160,kanpur,india,0.0161,w,150,"kanpur, india",kanpur,india
+3262128,3262128,3228003,durban,south africa,0.0106,w,151,"durban, south africa",durban,south africa
+3193267,3193267,3142466,guayaquil,ecuador,0.0162,w,152,"guayaquil, ecuador",guayaquil,ecuador
+3183135,3183135,3157538,pyongyang,north korea,0.0081,w,153,"pyongyang, north korea",p'yŏngyang,north korea
+3160631,3160631,3154570,milan,italy,0.0019,w,154,"milan, italy",milan,italy
+3159631,3159631,3095099,guatemala city,guatemala,0.0208,w,155,"guatemala city, guatemala",guatemala city,guatemala
+3154591,3154591,3154463,athens,greece,0.0,w,156,"athens, greece",athens,greece
+3133298,3133298,3041229,depok,indonesia,0.0303,w,157,"depok, indonesia",depok,indonesia
+3120340,3120340,3088414,izmir,turkey,0.0103,w,158,"izmir, turkey",izmir,turkey
+3106340,3106340,3046687,nagpur,india,0.0196,w,159,"nagpur, india",nagpur,india
+3088748,3088748,3044413,surabaya,indonesia,0.0146,w,160,"surabaya, indonesia",surabaya,indonesia
+3085998,3085998,3005409,handan,china,0.0268,w,161,"handan, china",handan,china
+3083721,3083721,3009047,coimbatore,india,0.0248,w,162,"coimbatore, india",coimbatore,india
+3071048,3071048,2979893,huaian,china,0.0306,w,163,"huaian, china",huai'an,china
+3060169,3060169,2987455,port-au-prince,haiti,0.0243,w,164,"port-au-prince, haiti",port-au-prince arrondissement,haiti
+3051065,3051065,3010685,zhongshan,china,0.0134,w,165,"zhongshan, china",zhongshan,china
+3051016,3051016,3007583,dubai,united arab emirates,0.0144,w,166,"dubai, united arab emirates",dubai,united arab emirates
+3050570,3050570,2929373,bamako,mali,0.0414,w,167,"bamako, mali",bamako,mali
+3022855,3022855,2891746,mbuji-mayi,dr congo,0.0453,w,168,"mbuji-mayi, dr congo",kasaï-oriental,democratic republic of the congo
+3020228,3020228,3016789,kiev,ukraine,0.0011,w,169,"kiev, ukraine",kyiv,ukraine
+3014607,3014607,3000536,lisbon,portugal,0.0047,w,170,"lisbon, portugal",lisbon,portugal
+2994537,2994537,2917819,weifang,china,0.0263,w,171,"weifang, china",weifang,china
+2991727,2991727,2972145,caracas,venezuela,0.0066,w,172,"caracas, venezuela",caracas,venezuela
+2984154,2984154,2891119,thiruvananthapuram,india,0.0322,w,173,"thiruvananthapuram, india",thiruvananthapuram,india
+2952115,2952115,2901810,algiers,algeria,0.0173,w,174,"algiers, algeria",algiers,algeria
+2935527,2935527,2937359,shizuoka,japan,-0.0006,w,175,"shizuoka, japan",shizuoka prefecture,japan
+2933962,2933962,2811959,lubumbashi,dr congo,0.0434,w,176,"lubumbashi, dr congo",lubumbashi,democratic republic of the congo
+2890433,2890433,2863730,cali,colombia,0.0093,w,177,"cali, colombia",cali,colombia
+2890418,2890418,2848473,goiania,brazil,0.0147,w,178,"goiania, brazil",goiânia,brazil
+2889899,2889899,2818100,pretoria,south africa,0.0255,w,179,"pretoria, south africa",pretoria,south africa
+2882171,2882171,2805654,shaoxing,china,0.0273,w,180,"shaoxing, china",shaoxing,china
+2861686,2861686,2848557,incheon,south korea,0.0046,w,181,"incheon, south korea",incheon,south korea
+2834508,2834508,2764584,yantai,china,0.0253,w,182,"yantai, china",yantai,china
+2828435,2828435,2780142,zibo,china,0.0174,w,183,"zibo, china",zibo,china
+2827610,2827610,2758593,huizhou,china,0.025,w,184,"huizhou, china",huizhou,china
+2811756,2811756,2791005,manchester,united kingdom,0.0074,w,185,"manchester, united kingdom",manchester,united kingdom
+2766334,2766334,2754196,taipei,taiwan,0.0044,w,186,"taipei, taiwan",taipei,taiwan
+2726815,2726815,2610483,mogadishu,somalia,0.0446,w,187,"mogadishu, somalia",mogadishu,somalia
+2724566,2724566,2637733,brazzaville,republic of the congo,0.0329,w,188,"brazzaville, republic of the congo",brazzaville,congo-brazzaville
+2721165,2721165,2660072,accra,ghana,0.023,w,189,"accra, ghana",accra,ghana
+2714215,2714215,2674000,bandung,indonesia,0.015,w,190,"bandung, indonesia",bandung,indonesia
+2685361,2685361,2584771,damascus,syria,0.0389,w,191,"damascus, syria",damascus,syria
+2684807,2684807,2665100,birmingham,united kingdom,0.0074,w,192,"birmingham, united kingdom",birmingham,united kingdom
+2682509,2682509,2657088,vancouver,canada,0.0096,w,193,"vancouver, canada",vancouver,canada
+2674336,2674336,2626368,toluca de lerdo,mexico,0.0183,w,194,"toluca de lerdo, mexico",toluca,mexico
+2666744,2666744,2602793,luoyang,china,0.0246,w,195,"luoyang, china",luoyang,china
+2660947,2660947,2666112,sapporo,japan,-0.0019,w,196,"sapporo, japan",sapporo,japan
+2633661,2633661,2603243,tashkent,uzbekistan,0.0117,w,197,"tashkent, uzbekistan",tashkent,uzbekistan
+2633243,2633243,2579762,patna,india,0.0207,w,198,"patna, india",patna,india
+2624865,2624865,2564502,bhopal,india,0.0235,w,199,"bhopal, india",bhopal,india
+2590002,2590002,2627520,chicago,united states,-0.0143,us,200,"chicago, united states",chicago,united states
+2570980,2570980,2514077,tangerang,indonesia,0.0226,w,201,"tangerang, indonesia",tangerang,indonesia
+2555722,2555722,2492230,nantong,china,0.0255,w,202,"nantong, china",nantong,china
+2536449,2536449,2504505,brisbane,australia,0.0128,w,203,"brisbane, australia",brisbane city,australia
+2510673,2510673,2475446,tunis,tunisia,0.0142,w,204,"tunis, tunisia",tunisia,tunisia
+2480546,2480546,2411785,peshawar,pakistan,0.0285,w,205,"peshawar, pakistan",peshawar city tehsil,pakistan
+2479070,2479070,2439054,medan,indonesia,0.0164,w,206,"medan, indonesia",city of medan,indonesia
+2479058,2479058,2415416,gujranwala,pakistan,0.0263,w,207,"gujranwala, pakistan",gujujranwala city tehsil,pakistan
+2464162,2464162,2432304,baku,azerbaijan,0.0131,w,208,"baku, azerbaijan",baku city,azerbaijan
+2443686,2443686,2380636,hohhot,china,0.0265,w,209,"hohhot, china",hohhot,china
+2436620,2436620,2439564,san juan,puerto rico,-0.0012,w,210,"san juan, puerto rico",san juan,united states
+2432177,2432177,2409409,belem,brazil,0.0094,w,211,"belem, brazil",belém,brazil
+2430388,2430388,2377325,rawalpindi,pakistan,0.0223,w,212,"rawalpindi, pakistan",rawalpindi,pakistan
+2422342,2422342,2367554,agra,india,0.0231,w,213,"agra, india",agra,india
+2406854,2406854,2375636,manaus,brazil,0.0131,w,214,"manaus, brazil",manaus,brazil
+2405664,2405664,2346137,kannur,india,0.0254,w,215,"kannur, india",kannur,india
+2402485,2402485,2421354,beirut,lebanon,-0.0078,w,216,"beirut, lebanon",beirut,lebanon
+2400826,2400826,2367626,maracaibo,venezuela,0.014,w,217,"maracaibo, venezuela",maracaibo,venezuela
+2397410,2397410,2343452,liuzhou,china,0.023,w,218,"liuzhou, china",liuzhou,china
+2385110,2385110,2330928,visakhapatnam,india,0.0232,w,219,"visakhapatnam, india",visakhapatnam,india
+2381242,2381242,2334878,baotou,china,0.0199,w,220,"baotou, china",baotou city,china
+2373365,2373365,2324084,vadodara,india,0.0212,w,221,"vadodara, india",vadodara,india
+2373302,2373302,2349400,barranquilla,colombia,0.0102,w,222,"barranquilla, colombia",barranquilla,colombia
+2352680,2352680,2281198,phnom penh,cambodia,0.0313,w,223,"phnom penh, cambodia",phnom penh,cambodia
+2341433,2341433,2342302,sendai,japan,-0.0004,w,224,"sendai, japan",sendai,japan
+2338724,2338724,2318850,taoyuan,taiwan,0.0086,w,225,"taoyuan, taiwan",taoyuan city,taiwan
+2332531,2332531,2287166,xuzhou,china,0.0198,w,226,"xuzhou, china",xuzhou,china
+2317650,2317650,2203025,aleppo,syria,0.052,w,227,"aleppo, syria",aleppo,syria
+2305889,2305889,2304383,houston,united states,0.0007,us,228,"houston, united states",houston,united states
+2297216,2297216,2259787,tijuana,mexico,0.0166,w,229,"tijuana, mexico",tijuana,mexico
+2294589,2294589,2258396,esfahan,iran,0.016,w,230,"esfahan, iran",isfahan,iran
+2294299,2294299,2237369,nashik,india,0.0254,w,231,"nashik, india",nashik,india
+2290785,2290785,2229765,vijayawada,india,0.0274,w,232,"vijayawada, india",vijayawada,india
+2252688,2252688,2232240,amman,jordan,0.0092,w,233,"amman, jordan",amman,jordan
+2250104,2250104,2176022,putian,china,0.034,w,234,"putian, china",putian city,china
+2205407,2205407,2154600,multan,pakistan,0.0236,w,235,"multan, pakistan",multan,pakistan
+2196818,2196818,2170513,grande vitoria,brazil,0.0121,w,236,"grande vitoria, brazil",grande vitoria,brazil
+2195262,2195262,2124797,wuhu anhui,china,0.0332,w,237,"wuhu anhui, china",wuhu,china
+2184560,2184560,2149928,mecca,saudi arabia,0.0161,w,238,"mecca, saudi arabia",makkah al mukarramah,saudi arabia
+2181940,2181940,2106606,kollam,india,0.0358,w,239,"kollam, india",kollam,india
+2180027,2180027,2179384,naples,italy,0.0003,w,240,"naples, italy",naples,italy
+2179929,2179929,2180997,daegu,south korea,-0.0005,w,241,"daegu, south korea",daegu,south korea
+2178596,2178596,2110937,conakry,guinea,0.0321,w,242,"conakry, guinea",conakry,guinea
+2175102,2175102,2131291,yangzhou,china,0.0206,w,243,"yangzhou, china",yangzhou city,china
+2152518,2152518,2148930,havana,cuba,0.0017,w,244,"havana, cuba",havana,cuba
+2152226,2152226,2102143,taizhou zhejiang,china,0.0238,w,245,"taizhou zhejiang, china",taizhou,china
+2149703,2149703,2107539,baoding,china,0.02,w,246,"baoding, china",baoding city,china
+2143491,2143491,2117997,perth,australia,0.012,w,247,"perth, australia",perth,australia
+2132178,2132178,2121992,brussels,belgium,0.0048,w,248,"brussels, belgium",brussels,belgium
+2120049,2120049,2076364,linyi shandong,china,0.021,w,249,"linyi shandong, china",linyi,china
+2115513,2115513,2086324,bursa,turkey,0.014,w,250,"bursa, turkey",bursa,turkey
+2096981,2096981,2043107,rajkot,india,0.0264,w,251,"rajkot, india",rajkot,india
+2064733,2064733,2057257,minsk,belarus,0.0036,w,252,"minsk, belarus",minsk,belarus
+2062884,2062884,2067591,hiroshima,japan,-0.0023,w,253,"hiroshima, japan",hiroshima,japan
+2056646,2056646,2016092,haikou,china,0.0201,w,254,"haikou, china",haikou city,china
+2044371,2044371,2000656,daqing,china,0.0219,w,255,"daqing, china",daqing city,china
+2042734,2042734,1981615,lome,togo,0.0308,w,256,"lome, togo",lomé,togo
+2035631,2035631,1986439,lianyungang,china,0.0248,w,257,"lianyungang, china",lianyungang,china
+2034326,2034326,1993463,yancheng jiangsu,china,0.0205,w,258,"yancheng jiangsu, china",yancheng city,china
+2015735,2015735,1976866,panama city,panama,0.0197,w,259,"panama city, panama",panama city,panama
+2015209,2015209,1987301,almaty,kazakhstan,0.014,w,260,"almaty, kazakhstan",almaty,kazakhstan
+2013571,2013571,1975306,semarang,indonesia,0.0194,w,261,"semarang, indonesia",semarang,indonesia
+2011964,2011964,1967684,hyderabad,pakistan,0.0225,w,262,"hyderabad, pakistan",حیدرآباد,pakistan
+2007265,2007265,1983445,valencia,venezuela,0.012,w,263,"valencia, venezuela",valencia,venezuela
+1991457,1991457,1949400,davao city,philippines,0.0216,w,264,"davao city, philippines",davao city,philippines
+1990487,1990487,1975271,vienna,austria,0.0077,w,265,"vienna, austria",vienna,austria
+1989197,1989197,1959388,rabat,morocco,0.0152,w,266,"rabat, morocco",rabat,morocco
+1988438,1988438,1951085,ludhiana,india,0.0191,w,267,"ludhiana, india",ludhiana,india
+1986667,1986667,1956995,quito,ecuador,0.0152,w,268,"quito, ecuador",quito,ecuador
+1972558,1972558,1904631,benin city,nigeria,0.0357,w,269,"benin city, nigeria",benin city,nigeria
+1965570,1965570,1935619,la paz,bolivia,0.0155,w,270,"la paz, bolivia",la paz,bolivia
+1965110,1965110,1947785,baixada santista,brazil,0.0089,w,271,"baixada santista, brazil",região metropolitana da baixada santista,brazil
+1942470,1942470,1928661,west yorkshire,united kingdom,0.0072,w,272,"west yorkshire, united kingdom",west yorkshire,united kingdom
+1938915,1938915,1865172,can tho,vietnam,0.0395,w,273,"can tho, vietnam",cần thơ,vietnam
+1930373,1930373,1889829,zhuhai,china,0.0215,w,274,"zhuhai, china",zhuhai,china
+1920733,1920733,1869994,quanzhou,china,0.0271,w,276,"quanzhou, china",quanzhou,china
+1915035,1915035,1852405,matola,mozambique,0.0338,w,277,"matola, mozambique",matola,mozambique
+1913674,1913674,1873693,datong,china,0.0213,w,278,"datong, china",datong,china
+1872199,1872199,1830858,sharjah,united arab emirates,0.0226,w,279,"sharjah, united arab emirates",sharjah,united arab emirates
+1871912,1871912,1834279,madurai,india,0.0205,w,280,"madurai, india",madurai,india
+1871107,1871107,1816813,raipur,india,0.0299,w,281,"raipur, india",raipur,india
+1856638,1856638,1835895,adana,turkey,0.0113,w,282,"adana, turkey",adana,turkey
+1855732,1855732,1820114,santa cruz,bolivia,0.0196,w,283,"santa cruz, bolivia",santa cruz,bolivia
+1852673,1852673,1818421,palembang,indonesia,0.0188,w,284,"palembang, indonesia",palembang,indonesia
+1847691,1847691,1792020,mosul,iraq,0.0311,w,285,"mosul, iraq",mosul,iraq
+1840039,1840039,1788871,cixi,china,0.0286,w,286,"cixi, china",cixi,china
+1835403,1835403,1797805,meerut,india,0.0209,w,287,"meerut, india",meerut,india
+1833006,1833006,1804704,gaziantep,turkey,0.0157,w,288,"gaziantep, turkey",gaziantep,turkey
+1826135,1826135,1780592,la laguna,mexico,0.0256,w,289,"la laguna, mexico",la laguna,mexico
+1806147,1806147,1748142,batam,indonesia,0.0332,w,290,"batam, indonesia",batam city,indonesia
+1805727,1805727,1801944,turin,italy,0.0021,w,291,"turin, italy",turin,italy
+1799451,1799451,1797516,warsaw,poland,0.0011,w,292,"warsaw, poland",warsaw,poland
+1797469,1797469,1768511,jiangmen,china,0.0164,w,293,"jiangmen, china",jiangmen,china
+1789047,1789047,1754425,varanasi,india,0.0197,w,294,"varanasi, india",varanasi,india
+1787280,1787280,1787520,hamburg,germany,-0.0001,w,295,"hamburg, germany",hamburg,germany
+1781363,1781363,1774396,montevideo,uruguay,0.0039,w,296,"montevideo, uruguay",montevideo,uruguay
+1780391,1780391,1778052,budapest,hungary,0.0013,w,297,"budapest, hungary",budapest,hungary
+1774395,1774395,1761188,lyon,france,0.0075,w,298,"lyon, france",lyon,france
+1772318,1772318,1742706,xiangyang,china,0.017,w,299,"xiangyang, china",xiangyang,china
+1767520,1767520,1776385,bucharest,romania,-0.005,w,300,"bucharest, romania",bucharest,romania
+1758100,1758100,1711244,yichang,china,0.0274,w,301,"yichang, china",yichang,china
+1757699,1757699,1716591,yinchuan,china,0.0239,w,302,"yinchuan, china",yinchuan city,china
+1742750,1742750,1720954,shiraz,iran,0.0127,w,303,"shiraz, iran",shiraz,iran
+1738716,1738716,1664442,kananga,dr congo,0.0446,w,304,"kananga, dr congo",kananga,democratic republic of the congo
+1737502,1737502,1698277,srinagar,india,0.0231,w,305,"srinagar, india",srinagar,india
+1735365,1735365,1678020,monrovia,liberia,0.0342,w,306,"monrovia, liberia",monrovia,liberia
+1731862,1731862,1677173,tiruppur,india,0.0326,w,307,"tiruppur, india",tiruppur,india
+1730521,1730521,1695060,jamshedpur,india,0.0209,w,308,"jamshedpur, india",jamshedpur,india
+1726327,1726327,1664968,suqian,china,0.0369,w,309,"suqian, china",suqian,china
+1725283,1725283,1683389,aurangabad,india,0.0249,w,310,"aurangabad, india",aurangabad,india
+1723728,1723728,1680962,qinhuangdao,china,0.0254,w,311,"qinhuangdao, china",qinhuangdao,china
+1719604,1719604,1700066,stockholm,sweden,0.0115,w,312,"stockholm, sweden",stockholm,sweden
+1713452,1713452,1689499,anshan,china,0.0142,w,313,"anshan, china",anshan city,china
+1708147,1708147,1698088,glasgow,united kingdom,0.0059,w,314,"glasgow, united kingdom",glasgow,united kingdom
+1705078,1705078,1666605,xining,china,0.0231,w,315,"xining, china",xining,china
+1704930,1704930,1673094,makassar,indonesia,0.019,w,316,"makassar, indonesia",makassar,indonesia
+1702012,1702012,1661854,hengyang,china,0.0242,w,317,"hengyang, china",hengyang,china
+1701510,1701510,1694765,novosibirsk,russia,0.004,w,318,"novosibirsk, russia",novosibirsk,russia
+1699363,1699363,1672627,ulaanbaatar,mongolia,0.016,w,319,"ulaanbaatar, mongolia",ulaanbaatar,mongolia
+1694913,1694913,1623382,onitsha,nigeria,0.0441,w,320,"onitsha, nigeria",onitsha,nigeria
+1693701,1693701,1668785,jilin,china,0.0149,w,321,"jilin, china",jilin,china
+1693375,1693375,1642347,anyang,china,0.0311,w,322,"anyang, china",anyang,china
+1692770,1692770,1673220,auckland,new zealand,0.0117,w,323,"auckland, new zealand",auckland,new zealand
+1678028,1678028,1660737,tabriz,iran,0.0104,w,324,"tabriz, iran",tabriz,iran
+1676481,1676481,1660445,phoenix,united states,0.0097,us,325,"phoenix, united states",phoenix,united states
+1676167,1676167,1650319,muscat,oman,0.0157,w,326,"muscat, oman",muscat,oman
+1665023,1665023,1639613,calgary,canada,0.0155,w,327,"calgary, canada",calgary,canada
+1662407,1662407,1635458,qiqihaer,china,0.0165,w,328,"qiqihaer, china",qiqihaer service area,china
+1655618,1655618,1592324,n-djamena,chad,0.0397,w,329,"n-djamena, chad",n'djamena,chad
+1635707,1635707,1627549,marseille,france,0.005,w,330,"marseille, france",marseille,france
+1625937,1625937,1611651,cordoba,argentina,0.0089,w,331,"cordoba, argentina",cordoba,argentina
+1625325,1625325,1586547,jodhpur,india,0.0244,w,332,"jodhpur, india",jodhpur,india
+1621642,1621642,1571010,kathmandu,nepal,0.0322,w,333,"kathmandu, nepal",kathmandu,nepal
+1613041,1613041,1594096,rosario,argentina,0.0119,w,334,"rosario, argentina",rosario,argentina
+1609261,1609261,1568025,tegucigalpa,honduras,0.0263,w,335,"tegucigalpa, honduras",tegucigalpa,honduras
+1604085,1604085,1582313,ciudad juarez,mexico,0.0138,w,336,"ciudad juarez, mexico",ciudad juárez,mexico
+1603201,1603201,1578128,harare,zimbabwe,0.0159,w,337,"harare, zimbabwe",harare,zimbabwe
+1603011,1603011,1593608,karaj,iran,0.0059,w,338,"karaj, iran",karaj,iran
+1598976,1598976,1572571,medina,saudi arabia,0.0168,w,339,"medina, saudi arabia",medina,saudi arabia
+1595963,1595963,1569560,jining shandong,china,0.0168,w,340,"jining shandong, china",jining,china
+1593284,1593284,1566999,abu dhabi,united arab emirates,0.0168,w,341,"abu dhabi, united arab emirates",abu dhabi,united arab emirates
+1584507,1584507,1576416,munich,germany,0.0051,w,342,"munich, germany",munich,germany
+1584237,1584237,1547258,ranchi,india,0.0239,w,343,"ranchi, india",ranchi,india
+1581705,1581705,1577436,daejon,south korea,0.0027,w,344,"daejon, south korea",daejeon,south korea
+1568122,1568122,1536171,zhangjiakou,china,0.0208,w,345,"zhangjiakou, china",zhangjiakou,china
+1567615,1567615,1544448,edmonton,canada,0.015,w,346,"edmonton, canada",edmonton,canada
+1563021,1563021,1531860,mandalay,myanmar,0.0203,w,347,"mandalay, myanmar",mandalay,myanmar
+1559085,1559085,1552899,gaoxiong,taiwan,0.004,w,348,"gaoxiong, taiwan",kaohsiung,taiwan
+1558468,1558468,1516795,kota,india,0.0275,w,349,"kota, india",kota,india
+1556413,1556413,1535316,natal,brazil,0.0137,w,350,"natal, brazil",natal,brazil
+1552146,1552146,1491958,nouakchott,mauritania,0.0403,w,351,"nouakchott, mauritania",nouakchott,mauritania
+1551004,1551004,1522121,jabalpur,india,0.019,w,352,"jabalpur, india",jabalpur,india
+1538603,1538603,1512668,huainan,china,0.0171,w,353,"huainan, china",huainan,china
+1536017,1536017,1523629,grande sao luis,brazil,0.0081,w,354,"grande sao luis, brazil",grande,brazil
+1534081,1534081,1505033,asansol,india,0.0193,w,355,"asansol, india",asansol,india
+1533916,1533916,1550587,philadelphia,united states,-0.0107,us,356,"philadelphia, united states",philadelphia,united states
+1532970,1532970,1527728,yekaterinburg,russia,0.0034,w,357,"yekaterinburg, russia",yekaterinburg,russia
+1532902,1532902,1529472,gwangju,south korea,0.0022,w,358,"gwangju, south korea",gwangju,south korea
+1525749,1525749,1483320,yiwu,china,0.0286,w,359,"yiwu, china",yiwu,china
+1520628,1520628,1496298,chaozhou,china,0.0163,w,360,"chaozhou, china",chaozhou,china
+1508846,1508846,1475016,gwalior,india,0.0229,w,361,"gwalior, india",gwalior,india
+1508037,1508037,1459678,ganzhou,china,0.0331,w,362,"ganzhou, china",ganzhou,china
+1506593,1506593,1489751,san antonio,united states,0.0113,us,363,"san antonio, united states",san antonio,united states
+1499603,1499603,1443429,homs,syria,0.0389,w,364,"homs, syria",homs,syria
+1496258,1496258,1437233,niamey,niger,0.0411,w,365,"niamey, niger",niamey,niger
+1495223,1495223,1440396,mombasa,kenya,0.0381,w,366,"mombasa, kenya",mombasa,kenya
+1493346,1493346,1465152,allahabad,india,0.0192,w,367,"allahabad, india",prayagraj,india
+1485156,1485156,1448124,basra,iraq,0.0256,w,368,"basra, iraq",basra,iraq
+1483513,1483513,1423395,kisangani,dr congo,0.0422,w,369,"kisangani, dr congo",kisangani,democratic republic of the congo
+1482460,1482460,1461989,san jose,costa rica,0.014,w,370,"san jose, costa rica",san josé,costa rica
+1480470,1480470,1451748,amritsar,india,0.0198,w,371,"amritsar, india",amritsar,india
+1477600,1477600,1446810,taizhou jiangsu,china,0.0213,w,372,"taizhou jiangsu, china",taizhou,china
+1472709,1472709,1454222,chon buri,thailand,0.0127,w,373,"chon buri, thailand",chon buri province,thailand
+1470917,1470917,1424982,jiaxing,china,0.0322,w,374,"jiaxing, china",jiaxing,china
+1465926,1465926,1429315,weihai,china,0.0256,w,375,"weihai, china",baicheng city,china
+1463650,1463650,1422974,hai phong,vietnam,0.0286,w,376,"hai phong, vietnam",hải phòng,vietnam
+1451571,1451571,1437188,ottawa,canada,0.01,w,377,"ottawa, canada",ottawa,canada
+1443349,1443349,1431538,zurich,switzerland,0.0083,w,378,"zurich, switzerland",zurich,switzerland
+1441911,1441911,1416064,taian shandong,china,0.0183,w,379,"taian shandong, china",tai'an,china
+1436818,1436818,1413474,queretaro,mexico,0.0165,w,380,"queretaro, mexico",querétaro,mexico
+1435125,1435125,1421827,joao pessoa,brazil,0.0094,w,381,"joao pessoa, brazil",joão pessoa,brazil
+1434463,1434463,1398262,kaifeng,china,0.0259,w,382,"kaifeng, china",kaifeng,china
+1430688,1430688,1400250,cochabamba,bolivia,0.0217,w,383,"cochabamba, bolivia",cochabamba,bolivia
+1429935,1429935,1407632,konya,turkey,0.0158,w,384,"konya, turkey",konya,turkey
+1428802,1428802,1373523,liuyang,china,0.0402,w,385,"liuyang, china",liuyang,china
+1427894,1427894,1378077,liuan,china,0.0361,w,386,"liuan, china",liuan,china
+1426583,1426583,1391258,rizhao,china,0.0254,w,387,"rizhao, china",rizhao,china
+1418978,1418978,1421052,kharkiv,ukraine,-0.0015,w,388,"kharkiv, ukraine",kharkiv,ukraine
+1414532,1414532,1389776,dhanbad,india,0.0178,w,389,"dhanbad, india",dhanbad,india
+1412714,1412714,1377572,nanchong,china,0.0255,w,390,"nanchong, china",nanchong,china
+1410791,1410791,1379377,dongying,china,0.0228,w,391,"dongying, china",dongying,china
+1410697,1410697,1408144,belgrade,serbia,0.0018,w,392,"belgrade, serbia",city of belgrade,serbia
+1406091,1406091,1376453,zunyi,china,0.0215,w,393,"zunyi, china",zunyi,china
+1399310,1399310,1371998,zhanjiang,china,0.0199,w,394,"zhanjiang, china",zhanjiang city,china
+1396632,1396632,1381498,bucaramanga,colombia,0.011,w,395,"bucaramanga, colombia",bucaramanga,colombia
+1393453,1393453,1329284,uyo,nigeria,0.0483,w,396,"uyo, nigeria",uyo,nigeria
+1391205,1391205,1381005,copenhagen,denmark,0.0074,w,397,"copenhagen, denmark",copenhagen,denmark
+1387377,1387377,1354025,shiyan,china,0.0246,w,398,"shiyan, china",shiyan,china
+1381855,1381855,1369066,taizhong,taiwan,0.0093,w,399,"taizhong, taiwan",taichung,taiwan
+1380715,1380715,1348664,bareilly,india,0.0238,w,400,"bareilly, india",bareilly,india
+1379368,1379368,1336387,pointe-noire,republic of the congo,0.0322,w,401,"pointe-noire, republic of the congo",pointe-noire (département),congo-brazzaville
+1379280,1379280,1366783,adelaide,australia,0.0091,w,402,"adelaide, australia",adelaide city council,australia
+1378014,1378014,1310754,mwanza,tanzania,0.0513,w,404,"mwanza, tanzania",mwanza,tanzania
+1376449,1376449,1351383,mianyang sichuan,china,0.0185,w,405,"mianyang sichuan, china",mianyang,china
+1376146,1376146,1358871,samut prakan,thailand,0.0127,w,406,"samut prakan, thailand",samut prakan province,thailand
+1375984,1375984,1363510,maceio,brazil,0.0091,w,407,"maceio, brazil",maceió,brazil
+1375452,1375452,1378307,san diego,united states,-0.0021,us,408,"san diego, united states",san diego,united states
+1373800,1373800,1354174,qom,iran,0.0145,w,409,"qom, iran",qom,iran
+1372400,1372400,1347240,antalya,turkey,0.0187,w,410,"antalya, turkey",antalya,turkey
+1361992,1361992,1348521,joinville,brazil,0.01,w,411,"joinville, brazil",joinville,brazil
+1360779,1360779,1322916,tengzhou,china,0.0286,w,412,"tengzhou, china",tengzhou city,china
+1355564,1355564,1323174,yingkou,china,0.0245,w,413,"yingkou, china",yingkou city,china
+1352912,1352912,1329291,ad-dammam,saudi arabia,0.0178,w,414,"ad-dammam, saudi arabia",dammam,saudi arabia
+1349994,1349994,1310433,suzhou,china,0.0302,w,415,"suzhou, china",suzhou city,china
+1348848,1348848,1314178,tanger,morocco,0.0264,w,416,"tanger, morocco",tangier,morocco
+1347559,1347559,1309168,freetown,sierra leone,0.0293,w,417,"freetown, sierra leone",freetown,sierra leone
+1346810,1346810,1337786,helsinki,finland,0.0067,w,418,"helsinki, finland",helsinki,finland
+1346018,1346018,1312369,aligarh,india,0.0256,w,419,"aligarh, india",aligarh,india
+1335966,1335966,1301740,moradabad,india,0.0263,w,420,"moradabad, india",moradabad,india
+1334532,1334532,1303355,pekan baru,indonesia,0.0239,w,421,"pekan baru, indonesia",pekanbaru,indonesia
+1333930,1333930,1303900,maoming,china,0.023,w,422,"maoming, china",maoming city,china
+1333096,1333096,1276316,lilongwe,malawi,0.0445,w,423,"lilongwe, malawi",lilongwe,malawi
+1329301,1329301,1324652,porto,portugal,0.0035,w,424,"porto, portugal",porto,portugal
+1327947,1327947,1323339,prague,czech republic,0.0035,w,425,"prague, czech republic",prague,czechia
+1324111,1324111,1291280,astana,kazakhstan,0.0254,w,426,"astana, kazakhstan",astana,kazakhstan
+1320779,1320779,1282479,jieyang,china,0.0299,w,427,"jieyang, china",jieyang city,china
+1317276,1317276,1304565,fushun liaoning,china,0.0097,w,428,"fushun liaoning, china",fushun county,china
+1316461,1316461,1288245,mysore,india,0.0219,w,429,"mysore, india",mysuru,india
+1314916,1314916,1252890,abomey-calavi,benin,0.0495,w,430,"abomey-calavi, benin",abomey-calavi,benin
+1314784,1314784,1281790,ruian,china,0.0257,w,431,"ruian, china",rui'an,china
+1313311,1313311,1290039,fes,morocco,0.018,w,432,"fes, morocco",fez,morocco
+1312631,1312631,1295928,port elizabeth,south africa,0.0129,w,433,"port elizabeth, south africa",gqeberha,south africa
+1309895,1309895,1294486,florianopolis,brazil,0.0119,w,434,"florianopolis, brazil",florianópolis,brazil
+1309372,1309372,1293619,ahvaz,iran,0.0122,w,435,"ahvaz, iran",ahwaz,iran
+1308469,1308469,1248783,bukavu,dr congo,0.0478,w,436,"bukavu, dr congo",bukavu,democratic republic of the congo
+1300993,1300993,1239186,nnewi,nigeria,0.0499,w,437,"nnewi, nigeria",nnewi,nigeria
+1296232,1296232,1291884,kazan,russia,0.0034,w,438,"kazan, russia",kazan,russia
+1296065,1296065,1257941,jinhua,china,0.0303,w,439,"jinhua, china",jinhua,china
+1295447,1295447,1297495,dallas,united states,-0.0016,us,440,"dallas, united states",dallas,united states
+1292133,1292133,1273325,san luis potosi,mexico,0.0148,w,441,"san luis potosi, mexico",san luis potosí,mexico
+1290231,1290231,1261077,baoji,china,0.0231,w,442,"baoji, china",baoji,china
+1289254,1289254,1257642,bhubaneswar,india,0.0251,w,444,"bhubaneswar, india",bhubaneshwar,india
+1287952,1287952,1247551,kigali,rwanda,0.0324,w,445,"kigali, rwanda",kigali city,rwanda
+1287540,1287540,1288114,sofia,bulgaria,-0.0004,w,446,"sofia, bulgaria",sofia city,bulgaria
+1285750,1285750,1256581,pingdingshan henan,china,0.0232,w,447,"pingdingshan henan, china",pingdingshan,china
+1284551,1284551,1270172,dublin,ireland,0.0113,w,448,"dublin, ireland",dublin,ireland
+1282756,1282756,1254160,puning,china,0.0228,w,449,"puning, china",jieyang city,china
+1279544,1279544,1252414,chifeng,china,0.0217,w,450,"chifeng, china",chifeng,china
+1277238,1277238,1254519,zhuzhou,china,0.0181,w,451,"zhuzhou, china",lukou district,china
+1277050,1277050,1206767,bujumbura,burundi,0.0582,w,452,"bujumbura, burundi",bujumbura,burundi
+1275395,1275395,1250668,zhenjiang jiangsu,china,0.0198,w,453,"zhenjiang jiangsu, china",zhenjiang,china
+1272872,1272872,1230644,liupanshui,china,0.0343,w,454,"liupanshui, china",liupanshui,china
+1267872,1267872,1254192,barquisimeto,venezuela,0.0109,w,455,"barquisimeto, venezuela",barquisimeto,venezuela
+1266792,1266792,1232447,islamabad,pakistan,0.0279,w,456,"islamabad, pakistan",islamabad,pakistan
+1264856,1264856,1236271,huaibei,china,0.0231,w,457,"huaibei, china",huaibei,china
+1258124,1258124,1213778,tasikmalaya,indonesia,0.0365,w,458,"tasikmalaya, indonesia",tasikmalaya,indonesia
+1256553,1256553,1242945,maracay,venezuela,0.0109,w,459,"maracay, venezuela",maracay,venezuela
+1256155,1256155,1231445,bogor,indonesia,0.0201,w,460,"bogor, indonesia",bogor,indonesia
+1253228,1253228,1220634,da nang,vietnam,0.0267,w,461,"da nang, vietnam",đà nẵng,vietnam
+1250302,1250302,1251332,nizhniy novgorod,russia,-0.0008,w,462,"nizhniy novgorod, russia",nizhny novgorod,russia
+1250300,1250300,1224629,nanyang henan,china,0.021,w,463,"nanyang henan, china",nanyang,china
+1249380,1249380,1223912,xiangtan hunan,china,0.0208,w,464,"xiangtan hunan, china",xiangtan,china
+1247177,1247177,1207275,pizhou,china,0.0331,w,465,"pizhou, china",pizhou,china
+1244978,1244978,1221960,tiruchirappalli,india,0.0188,w,466,"tiruchirappalli, india",tiruchirappalli,india
+1243883,1243883,1240926,chelyabinsk,russia,0.0024,w,467,"chelyabinsk, russia",chelyabinsk,russia
+1242319,1242319,1226427,mendoza,argentina,0.013,w,468,"mendoza, argentina",mendoza,argentina
+1241152,1241152,1197935,luohe,china,0.0361,w,469,"luohe, china",luohe,china
+1240158,1240158,1183042,xiongan,china,0.0483,w,470,"xiongan, china",xiong'an new area,china
+1239699,1239699,1214775,chandigarh,india,0.0205,w,471,"chandigarh, india",chandigarh,india
+1239654,1239654,1220603,merida,mexico,0.0156,w,472,"merida, mexico",mérida,mexico
+1238377,1238377,1215376,jinzhou,china,0.0189,w,473,"jinzhou, china",jinzhou,china
+1237550,1237550,1216852,benxi,china,0.017,w,474,"benxi, china",benxi city,china
+1233584,1233584,1200222,binzhou,china,0.0278,w,475,"binzhou, china",binyang,china
+1230407,1230407,1188803,aba,nigeria,0.035,w,476,"aba, nigeria",aba,nigeria
+1228773,1228773,1213348,chiang mai,thailand,0.0127,w,477,"chiang mai, thailand",chiang mai,thailand
+1225591,1225591,1175989,bazhong,china,0.0422,w,478,"bazhong, china",bazhong city,china
+1221495,1221495,1190348,quetta,pakistan,0.0262,w,479,"quetta, pakistan",quetta city tehsil,pakistan
+1221451,1221451,1187398,kaduna,nigeria,0.0287,w,480,"kaduna, nigeria",kaduna state,nigeria
+1218067,1218067,1196841,guilin,china,0.0177,w,481,"guilin, china",guilin,china
+1207856,1207856,1171689,saharanpur,india,0.0309,w,482,"saharanpur, india",saharanpur,india
+1205428,1205428,1181194,hubli-dharwad,india,0.0205,w,483,"hubli-dharwad, india",hubli dharwad municipal corporation offices,india
+1201400,1201400,1169864,yueqing,china,0.027,w,484,"yueqing, china",yueqing,china
+1199455,1199455,1176330,guwahati,india,0.0197,w,485,"guwahati, india",guwahati,india
+1196982,1196982,1178477,mexicali,mexico,0.0157,w,486,"mexicali, mexico",mexicali,mexico
+1194757,1194757,1169953,salem,india,0.0212,w,487,"salem, india",salem,india
+1193253,1193253,1162793,maputo,mozambique,0.0262,w,488,"maputo, mozambique",maputo,mozambique
+1192436,1192436,1183292,tripoli,libya,0.0077,w,489,"tripoli, libya",tripoli,libya
+1186475,1186475,1174429,haifa,israel,0.0103,w,490,"haifa, israel",haifa,israel
+1186233,1186233,1162242,bandar lampung,indonesia,0.0206,w,491,"bandar lampung, indonesia",bandar lampung,indonesia
+1185053,1185053,1128646,bobo-dioulasso,burkina faso,0.05,w,492,"bobo-dioulasso, burkina faso",bobo-dioulasso,burkina faso
+1181817,1181817,1174025,amsterdam,netherlands,0.0066,w,493,"amsterdam, netherlands",amsterdam,netherlands
+1181020,1181020,1155073,shimkent,kazakhstan,0.0225,w,494,"shimkent, kazakhstan",shymkent,kazakhstan
+1180677,1180677,1180745,omsk,russia,-0.0001,w,495,"omsk, russia",omsk,russia
+1179301,1179301,1161448,aguascalientes,mexico,0.0154,w,496,"aguascalientes, mexico",aguascalientes,mexico
+1176617,1176617,1127198,hargeysa,somalia,0.0438,w,497,"hargeysa, somalia",hargeisa,somalia
+1173095,1173095,1166792,krasnoyarsk,russia,0.0054,w,498,"krasnoyarsk, russia",krasnoyarsk,russia
+1160840,1160840,1140599,xinxiang,china,0.0177,w,499,"xinxiang, china",xinxiang,china
+1159371,1159371,1126249,siliguri,india,0.0294,w,500,"siliguri, india",siliguri,india
+1159259,1159259,1131361,wenling,china,0.0247,w,501,"wenling, china",wenling,china
+1154451,1154451,1155732,samara,russia,-0.0011,w,502,"samara, russia",samara,russia
+1150859,1150859,1133629,zaozhuang,china,0.0152,w,503,"zaozhuang, china",zaozhuang,china
+1149014,1149014,1143715,cologne,germany,0.0046,w,504,"cologne, germany",cologne,germany
+1147967,1147967,1135671,yongin,south korea,0.0108,w,505,"yongin, south korea",yongin-si,south korea
+1146786,1146786,1144799,ufa,russia,0.0017,w,506,"ufa, russia",ufa,russia
+1146343,1146343,1120694,fuyang,china,0.0229,w,507,"fuyang, china",fuyang,china
+1145224,1145224,1093308,ikorodu,nigeria,0.0475,w,508,"ikorodu, nigeria",ikorodu,nigeria
+1142997,1142997,1110824,bien hoa,vietnam,0.029,w,509,"bien hoa, vietnam",bien hoa,vietnam
+1142682,1142682,1118826,jalandhar,india,0.0213,w,510,"jalandhar, india",jalandhar,india
+1142542,1142542,1120675,panjin,china,0.0195,w,511,"panjin, china",panjin city,china
+1140264,1140264,1112680,ma'anshan,china,0.0248,w,512,"ma'anshan, china",ma'anshan,china
+1140169,1140169,1123843,cuernavaca,mexico,0.0145,w,513,"cuernavaca, mexico",cuernavaca,mexico
+1139641,1139641,1138854,rostov-on-don,russia,0.0007,w,514,"rostov-on-don, russia",rostov-on-don,russia
+1135342,1135342,1116295,chihuahua,mexico,0.0171,w,515,"chihuahua, mexico",chihuahua,mexico
+1131718,1131718,1100271,fuzhou jiangxi,china,0.0286,w,516,"fuzhou jiangxi, china",fuzhou city,china
+1131226,1131226,1077108,tshikapa,dr congo,0.0502,w,517,"tshikapa, dr congo",tshikapa,democratic republic of the congo
+1130887,1130887,1106736,shangrao,china,0.0218,w,518,"shangrao, china",shangrao,china
+1128176,1128176,1100324,samarinda,indonesia,0.0253,w,519,"samarinda, indonesia",samarinda,indonesia
+1127721,1127721,1104742,bishkek,kyrgyzstan,0.0208,w,520,"bishkek, kyrgyzstan",bishkek city,kyrgyzstan
+1127601,1127601,1103202,zhaoqing,china,0.0221,w,521,"zhaoqing, china",zhaoqing city,china
+1123376,1123376,1116052,san salvador,el salvador,0.0066,w,522,"san salvador, el salvador",san salvador,el salvador
+1122041,1122041,1078630,yichun jiangxi,china,0.0402,w,523,"yichun jiangxi, china",yichun,china
+1119791,1119791,1084969,chenzhou,china,0.0321,w,524,"chenzhou, china",chenzhou,china
+1119534,1119534,1077929,sekondi takoradi,ghana,0.0386,w,525,"sekondi takoradi, ghana",sekondi-takoradi,ghana
+1116497,1116497,1087409,leshan,china,0.0267,w,526,"leshan, china",leshan,china
+1116193,1116193,1079670,aden,yemen,0.0338,w,527,"aden, yemen",aden governorate,yemen
+1114079,1114079,1105283,goyang,south korea,0.008,w,528,"goyang, south korea",goyang-si,south korea
+1113333,1113333,1096937,diyarbakir,turkey,0.0149,w,529,"diyarbakir, turkey",diyarbakir,turkey
+1111748,1111748,1072666,asmara,eritrea,0.0364,w,530,"asmara, eritrea",asmara,eritrea
+1108356,1108356,1080680,dezhou,china,0.0256,w,531,"dezhou, china",dezhou,china
+1108067,1108067,1089886,jingzhou hubei,china,0.0167,w,532,"jingzhou hubei, china",jingzhou,china
+1107118,1107118,1094510,managua,nicaragua,0.0115,w,533,"managua, nicaragua",managua,nicaragua
+1107001,1107001,1086214,johor bahru,malaysia,0.0191,w,534,"johor bahru, malaysia",johor bahru,malaysia
+1101611,1101611,1084623,kermanshah,iran,0.0157,w,535,"kermanshah, iran",kermanshah province,iran
+1101314,1101314,1056952,nyala,sudan,0.042,w,536,"nyala, sudan",nyala,sudan
+1100868,1100868,1085992,oslo,norway,0.0137,w,537,"oslo, norway",oslo,norway
+1100390,1100390,1074884,kirkuk,iraq,0.0237,w,538,"kirkuk, iraq",kirkuk,iraq
+1097542,1097542,1094813,yerevan,armenia,0.0025,w,539,"yerevan, armenia",yerevan,armenia
+1096463,1096463,1087599,cartagena,colombia,0.0082,w,540,"cartagena, colombia",cartagena,colombia
+1093687,1093687,1059902,changshu,china,0.0319,w,541,"changshu, china",changshu,china
+1091811,1091811,1067651,huzhou,china,0.0226,w,542,"huzhou, china",huzhou,china
+1091744,1091744,1063876,xuchang,china,0.0262,w,543,"xuchang, china",xuchang,china
+1088131,1088131,1070322,solapur,india,0.0166,w,544,"solapur, india",solapur,india
+1085199,1085199,1079120,lille,france,0.0056,w,545,"lille, france",lille,france
+1084817,1084817,1069402,mersin,turkey,0.0144,w,546,"mersin, turkey",mersin,turkey
+1084471,1084471,1082245,tbilisi,georgia,0.0021,w,547,"tbilisi, georgia",tbilisi,georgia
+1084120,1084120,1081768,perm,russia,0.0022,w,548,"perm, russia",perm,russia
+1083724,1083724,1080808,voronezh,russia,0.0027,w,549,"voronezh, russia",voronezh,russia
+1075244,1075244,1053041,denpasar,indonesia,0.0211,w,550,"denpasar, indonesia",denpasar,indonesia
+1070746,1070746,1060460,toulouse,france,0.0097,w,551,"toulouse, france",toulouse,france
+1070625,1070625,1030974,blantyre-limbe,malawi,0.0385,w,552,"blantyre-limbe, malawi",malawi telecommunication ltd,malawi
+1070122,1070122,1056986,aracaju,brazil,0.0124,w,553,"aracaju, brazil",aracaju,brazil
+1067172,1067172,1049690,marrakech,morocco,0.0167,w,554,"marrakech, morocco",marrakesh,morocco
+1066897,1066897,1038964,qujing,china,0.0269,w,555,"qujing, china",qujing city,china
+1064166,1064166,1048889,yueyang,china,0.0146,w,556,"yueyang, china",yueyang,china
+1063713,1063713,1030498,ilorin,nigeria,0.0322,w,557,"ilorin, nigeria",ilorin,nigeria
+1062567,1062567,1047251,tampico,mexico,0.0146,w,558,"tampico, mexico",tampico,mexico
+1061089,1061089,1057215,antwerp,belgium,0.0037,w,559,"antwerp, belgium",antwerp,belgium
+1059657,1059657,1050459,teresina,brazil,0.0088,w,560,"teresina, brazil",teresina,brazil
+1055921,1055921,1020399,guiping,china,0.0348,w,561,"guiping, china",guiping,china
+1055604,1055604,1031090,warangal,india,0.0238,w,562,"warangal, india",warangal,india
+1055373,1055373,1054442,changwon,south korea,0.0009,w,563,"changwon, south korea",changwon-si,south korea
+1052849,1052849,1033645,padang,indonesia,0.0186,w,564,"padang, indonesia",padang,indonesia
+1050320,1050320,1034126,saltillo,mexico,0.0157,w,565,"saltillo, mexico",saltillo,mexico
+1049486,1049486,1023756,xintai,china,0.0251,w,566,"xintai, china",xintai city,china
+1045005,1045005,1022604,cancun,mexico,0.0219,w,567,"cancun, mexico",cancún,mexico
+1042613,1042613,1024945,cebu city,philippines,0.0172,w,568,"cebu city, philippines",cebu city,philippines
+1039226,1039226,1026767,san miguel de tucuman,argentina,0.0121,w,569,"san miguel de tucuman, argentina",san miguel de tucumán,argentina
+1034498,1034498,995747,hamah,syria,0.0389,w,570,"hamah, syria",hama,syria
+1032772,1032772,1018976,acapulco de juarez,mexico,0.0135,w,571,"acapulco de juarez, mexico",acapulco,mexico
+1031425,1031425,986921,warri,nigeria,0.0451,w,572,"warri, nigeria",warri,nigeria
+1025507,1025507,1013240,kayseri,turkey,0.0121,w,573,"kayseri, turkey",kayseri,turkey
+1024521,1024521,993097,chengde,china,0.0316,w,574,"chengde, china",chengde county,china
+1022922,1022922,983352,owerri,nigeria,0.0402,w,575,"owerri, nigeria",owerri,nigeria
+1021919,1021919,1018012,rotterdam,netherlands,0.0038,w,576,"rotterdam, netherlands",rotterdam,netherlands
+1021575,1021575,999721,pingxiang jiangxi,china,0.0219,w,577,"pingxiang jiangxi, china",pingxiang,china
+1019600,1019600,991208,zhucheng,china,0.0286,w,578,"zhucheng, china",zhucheng city,china
+1017784,1017784,1005007,songkhla,thailand,0.0127,w,579,"songkhla, thailand",songkhla province,thailand
+1016585,1016585,1008599,valparaiso,chile,0.0079,w,580,"valparaiso, chile",valparaiso region,chile
+1016402,1016402,991876,dehradun,india,0.0247,w,581,"dehradun, india",dehradun,india
+1013672,1013672,1000947,nonthaburi,thailand,0.0127,w,582,"nonthaburi, thailand",nonthaburi province,thailand
+1013191,1013191,978327,leiyang,china,0.0356,w,583,"leiyang, china",leiyang,china
+1012794,1012794,986899,dushanbe,tajikistan,0.0262,w,584,"dushanbe, tajikistan",dushanbe,tajikistan
+1012582,1012582,969322,nampula,mozambique,0.0446,w,585,"nampula, mozambique",nampula province,mozambique
+1011119,1011119,984193,misratah,libya,0.0274,w,586,"misratah, libya",misrata,libya
+1010552,1010552,1001155,krasnodar,russia,0.0094,w,587,"krasnodar, russia",krasnodar,russia
+1009727,1009727,986248,laiwu,china,0.0238,w,588,"laiwu, china",laicheng district,china
+1009594,1009594,1000475,bordeaux,france,0.0091,w,589,"bordeaux, france",bordeaux,france
+1008989,1008989,993175,jixi heilongjiang,china,0.0159,w,590,"jixi heilongjiang, china",jixi,china
+1008220,1008220,982021,san pedro sula,honduras,0.0267,w,591,"san pedro sula, honduras",san pedro sula,honduras
+1007596,1007596,1007716,odesa,ukraine,-0.0001,w,592,"odesa, ukraine",odesa,ukraine
+1004247,1004247,982777,jiujiang,china,0.0218,w,593,"jiujiang, china",jiujiang,china
+1003016,1003016,958548,lubango,angola,0.0464,w,594,"lubango, angola",lubango,angola
+1002461,1002461,988744,morelia,mexico,0.0139,w,595,"morelia, mexico",morelia,mexico
+1001155,1001155,970129,jos,nigeria,0.032,w,596,"jos, nigeria",jos,nigeria
+999374,999374,964291,sylhet,bangladesh,0.0364,w,597,"sylhet, bangladesh",sylhet division,bangladesh
+998146,998146,979248,agadir,morocco,0.0193,w,598,"agadir, morocco",agadir,morocco
+993352,993352,995078,volgograd,russia,-0.0017,w,599,"volgograd, russia",volgograd,russia
+992414,992414,975348,mudanjiang,china,0.0175,w,600,"mudanjiang, china",mudanjiang,china
+990931,990931,981125,jacksonville,united states,0.01,us,601,"jacksonville, united states",jacksonville,united states
+990310,990310,967428,guigang,china,0.0237,w,602,"guigang, china",guigang,china
+989842,989842,973275,fort worth,united states,0.017,us,603,"fort worth, united states",fort worth,united states
+987814,987814,958487,najaf,iraq,0.0306,w,604,"najaf, iraq",al-najaf,iraq
+985965,985965,958335,bangui,central african republic,0.0288,w,605,"bangui, central african republic",bangui,central african republic
+983707,983707,961991,rajshahi,bangladesh,0.0226,w,606,"rajshahi, bangladesh",rajshahi division,bangladesh
+983694,983694,955663,hengshui,china,0.0293,w,607,"hengshui, china",hengshui,china
+983126,983126,978786,austin,united states,0.0044,us,608,"austin, united states",austin,united states
+983097,983097,969804,jerusalem,israel,0.0137,w,609,"jerusalem, israel",jerusalem,israel
+980054,980054,955519,zhangzhou,china,0.0257,w,610,"zhangzhou, china",zhangzhou city,china
+979303,979303,952278,xinyu,china,0.0284,w,611,"xinyu, china",xinyu,china
+978614,978614,951822,linfen,china,0.0281,w,612,"linfen, china",linfen,china
+978317,978317,953768,tianmen,china,0.0257,w,613,"tianmen, china",tianmen,china
+978202,978202,964266,ciudad guayana,venezuela,0.0145,w,614,"ciudad guayana, venezuela",ciudad guayana,venezuela
+977081,977081,960349,zamboanga city,philippines,0.0174,w,615,"zamboanga city, philippines",zamboanga city,philippines
+976606,976606,956079,yangjiang,china,0.0215,w,616,"yangjiang, china",yangjiang city,china
+974518,974518,940600,taiz,yemen,0.0361,w,617,"taiz, yemen",ta'izz governorate,yemen
+972485,972485,963045,cucuta,colombia,0.0098,w,618,"cucuta, colombia",perímetro urbano cúcuta,colombia
+971296,971296,958998,arequipa,peru,0.0128,w,619,"arequipa, peru",arequipa,peru
+970907,970907,936997,liling,china,0.0362,w,620,"liling, china",liling,china
+968288,968288,946653,antipolo,philippines,0.0229,w,621,"antipolo, philippines",antipolo,philippines
+968070,968070,955226,veracruz,mexico,0.0134,w,622,"veracruz, mexico",veracruz,mexico
+967627,967627,951417,reynosa,mexico,0.017,w,623,"reynosa, mexico",reynosa,mexico
+965483,965483,955104,khulna,bangladesh,0.0109,w,624,"khulna, bangladesh",khulna division,bangladesh
+963160,963160,939166,deyang,china,0.0255,w,625,"deyang, china",deyang,china
+962126,962126,950048,pathum thani,thailand,0.0127,w,626,"pathum thani, thailand",pathum thani province,thailand
+959784,959784,944465,bengbu,china,0.0162,w,627,"bengbu, china",nagqu city,china
+959250,959250,933395,jiangyin,china,0.0277,w,628,"jiangyin, china",jiangyin city,china
+959202,959202,951531,southampton,united kingdom,0.0081,w,629,"southampton, united kingdom",southampton,united kingdom
+958118,958118,943530,villahermosa,mexico,0.0155,w,630,"villahermosa, mexico",villahermosa,mexico
+956976,956976,927532,baishan,china,0.0317,w,631,"baishan, china",baishan city,china
+951808,951808,948149,nice,france,0.0039,w,632,"nice, france",nice,france
+950768,950768,935947,oran,algeria,0.0158,w,633,"oran, algeria",oran,algeria
+947734,947734,934341,west rand,south africa,0.0143,w,634,"west rand, south africa",west rand district municipality,south africa
+947634,947634,904676,cabinda,angola,0.0475,w,635,"cabinda, angola",cabinda province,angola
+947460,947460,904139,umuahia,nigeria,0.0479,w,636,"umuahia, nigeria",umuahia,nigeria
+944877,944877,905814,bogra,bangladesh,0.0431,w,637,"bogra, bangladesh",bogura,bangladesh
+944812,944812,919654,bahawalpur,pakistan,0.0274,w,638,"bahawalpur, pakistan",bahawalpur city tehsil,pakistan
+942159,942159,941508,seongnam,south korea,0.0007,w,639,"seongnam, south korea",seongnam-si,south korea
+940205,940205,918324,guntur,india,0.0238,w,640,"guntur, india",guntur,india
+936766,936766,941586,dnipro,ukraine,-0.0051,w,641,"dnipro, ukraine",dnipro,ukraine
+934936,934936,926095,campo grande,brazil,0.0095,w,642,"campo grande, brazil",campo grande,brazil
+933392,933392,919443,malang,indonesia,0.0152,w,643,"malang, indonesia",malang,indonesia
+932892,932892,922425,londrina,brazil,0.0113,w,644,"londrina, brazil",londrina,brazil
+932648,932648,917936,dandong,china,0.016,w,645,"dandong, china",dandong city,china
+932636,932636,951934,san jose,united states,-0.0203,us,646,"san jose, united states",san jose,united states
+930620,930620,910743,changzhi,china,0.0218,w,647,"changzhi, china",changzhi,china
+929961,929961,915060,hermosillo,mexico,0.0163,w,648,"hermosillo, mexico",hermosillo,mexico
+924670,924670,906581,bhiwandi,india,0.02,w,649,"bhiwandi, india",bhiwandi,india
+923715,923715,914036,la plata,argentina,0.0106,w,650,"la plata, argentina",la plata,argentina
+922871,922871,917032,liverpool,united kingdom,0.0064,w,651,"liverpool, united kingdom",liverpool city region,united kingdom
+921601,921601,902353,ashgabat,turkmenistan,0.0213,w,652,"ashgabat, turkmenistan",ashgabat city,turkmenistan
+920916,920916,911862,concepcion,chile,0.0099,w,653,"concepcion, chile",concepcion,chile
+920325,920325,909022,charlotte,united states,0.0124,us,654,"charlotte, united states",charlotte,united states
+919280,919280,897983,puducherry,india,0.0237,w,655,"puducherry, india",puducherry,india
+919026,919026,898338,changde,china,0.023,w,656,"changde, china",changde,china
+918675,918675,913376,bergamo,italy,0.0058,w,657,"bergamo, italy",bergamo,italy
+918218,918218,894388,firozabad,india,0.0266,w,658,"firozabad, india",firozabad,india
+917639,917639,896716,erbil,iraq,0.0233,w,659,"erbil, iraq",erbil,iraq
+916862,916862,903815,tyumen,russia,0.0144,w,660,"tyumen, russia",tyumen,russia
+916632,916632,903896,trujillo,peru,0.0141,w,661,"trujillo, peru",trujillo,peru
+916238,916238,900692,liaoyang,china,0.0173,w,662,"liaoyang, china",liaoyang county,china
+915823,915823,895111,shangqiu,china,0.0231,w,663,"shangqiu, china",shangqiu,china
+914300,914300,912734,ulsan,south korea,0.0017,w,664,"ulsan, south korea",ulsan,south korea
+913075,913075,897694,tuxtla gutierrez,mexico,0.0171,w,665,"tuxtla gutierrez, mexico",tuxtla gutiérrez,mexico
+909676,909676,908823,columbus,united states,0.0009,us,666,"columbus, united states",columbus,united states
+905868,905868,892254,soshanguve,south africa,0.0153,w,668,"soshanguve, south africa",soshanguve,south africa
+904070,904070,886381,xingtai,china,0.02,w,669,"xingtai, china",xingtai,china
+903910,903910,888620,culiacan,mexico,0.0172,w,670,"culiacan, mexico",culiacán,mexico
+902621,902621,871457,quzhou,china,0.0358,w,671,"quzhou, china",quzhou county,china
+901820,901820,870465,cherthala,india,0.036,w,672,"cherthala, india",cherthala,india
+893107,893107,876930,huangshi,china,0.0184,w,673,"huangshi, china",huangshi,china
+889767,889767,876131,fuxin,china,0.0156,w,674,"fuxin, china",fuxin,china
+885882,885882,839046,lokoja,nigeria,0.0558,w,675,"lokoja, nigeria",lokoja,nigeria
+883920,883920,869773,libreville,gabon,0.0163,w,677,"libreville, gabon",libreville,gabon
+883326,883326,860522,yongzhou,china,0.0265,w,678,"yongzhou, china",yongzhou,china
+882986,882986,861978,xinghua,china,0.0244,w,679,"xinghua, china",xinghua,china
+882209,882209,887716,donetsk,ukraine,-0.0062,w,680,"donetsk, ukraine",donetsk,ukraine
+881480,881480,864910,yibin,china,0.0192,w,681,"yibin, china",yibin,china
+875552,875552,846560,enugu,nigeria,0.0342,w,682,"enugu, nigeria",enugu state,nigeria
+875392,875392,869625,tainan,taiwan,0.0066,w,683,"tainan, taiwan",tainan,taiwan
+873268,873268,855191,xinyang,china,0.0211,w,685,"xinyang, china",xinyang,china
+872424,872424,857225,ipoh,malaysia,0.0177,w,686,"ipoh, malaysia",ipoh,malaysia
+870714,870714,857683,luzhou,china,0.0152,w,687,"luzhou, china",luzhou,china
+870201,870201,844747,maiduguri,nigeria,0.0301,w,689,"maiduguri, nigeria",maiduguri,nigeria
+869585,869585,851630,yangquan,china,0.0211,w,690,"yangquan, china",yangquan,china
+869575,869575,843754,huaihua,china,0.0306,w,691,"huaihua, china",huaihua,china
+869479,869479,849580,xiaogan,china,0.0234,w,692,"xiaogan, china",xiaogan,china
+858672,858672,837479,tianshui,china,0.0253,w,693,"tianshui, china",tianshui,china
+856339,856339,812090,bunia,dr congo,0.0545,w,694,"bunia, dr congo",bunia,democratic republic of the congo
+854946,854946,830125,bozhou,china,0.0299,w,695,"bozhou, china",bozhou,china
+853635,853635,818628,kottayam,india,0.0428,w,696,"kottayam, india",kottayam,india
+852608,852608,834782,zhuji,china,0.0214,w,697,"zhuji, china",zhuji,china
+851399,851399,826414,kunshan,china,0.0302,w,698,"kunshan, china",suzhou city,china
+851061,851061,844249,quebec city,canada,0.0081,w,699,"quebec city, canada",quebec,canada
+850233,850233,849687,palermo,italy,0.0006,w,700,"palermo, italy",palermo,italy
+849251,849251,841108,winnipeg,canada,0.0097,w,701,"winnipeg, canada",winnipeg,canada
+848443,848443,835900,orumiyeh,iran,0.015,w,702,"orumiyeh, iran",urmia,iran
+848002,848002,834065,eskisehir,turkey,0.0167,w,703,"eskisehir, turkey",eskisehir,turkey
+843207,843207,809468,benguela,angola,0.0417,w,704,"benguela, angola",benguela province,angola
+841928,841928,818057,jincheng,china,0.0292,w,705,"jincheng, china",jincheng,china
+839770,839770,838301,valencia,spain,0.0018,w,706,"valencia, spain",valencia,spain
+838928,838928,826777,heze,china,0.0147,w,707,"heze, china",heze,china
+837687,837687,838377,saratov,russia,-0.0008,w,708,"saratov, russia",saratov,russia
+837660,837660,816293,nellore,india,0.0262,w,709,"nellore, india",nellore,india
+836344,836344,821132,huludao,china,0.0185,w,710,"huludao, china",huludao city,china
+835850,835850,800010,zanzibar,tanzania,0.0448,w,711,"zanzibar, tanzania",zanzibar,tanzania
+835805,835805,825581,barcelona-puerto la cruz,venezuela,0.0124,w,712,"barcelona-puerto la cruz, venezuela",torre barcelona,venezuela
+835802,835802,818566,bikaner,india,0.0211,w,713,"bikaner, india",bikaner,india
+834639,834639,821192,haicheng,china,0.0164,w,714,"haicheng, china",anshan city,china
+831360,831360,813394,gebze,turkey,0.0221,w,715,"gebze, turkey",gebze,turkey
+830623,830623,811451,taixing,china,0.0236,w,716,"taixing, china",taixing,china
+830004,830004,813369,liaocheng,china,0.0205,w,717,"liaocheng, china",liaocheng,china
+829361,829361,804537,zhumadian,china,0.0309,w,718,"zhumadian, china",zhumadian,china
+828712,828712,823431,newcastle upon tyne,united kingdom,0.0064,w,719,"newcastle upon tyne, united kingdom",newcastle upon tyne,united kingdom
+827967,827967,807833,langfang,china,0.0249,w,720,"langfang, china",langfang,china
+826919,826919,826981,bucheon,south korea,-0.0001,w,721,"bucheon, south korea",bucheon-si,south korea
+823199,823199,800793,sulaimaniya,iraq,0.028,w,722,"sulaimaniya, iraq",sulaymaniyah,iraq
+822863,822863,811041,xalapa,mexico,0.0146,w,723,"xalapa, mexico",xalapa,mexico
+822471,822471,783243,malanje,angola,0.0501,w,724,"malanje, angola",malanje province,angola
+821765,821765,791931,anqiu,china,0.0377,w,725,"anqiu, china",anqiu city,china
+821435,821435,813320,sorocaba,brazil,0.01,w,726,"sorocaba, brazil",sorocaba,brazil
+821154,821154,797964,gaomi,china,0.0291,w,727,"gaomi, china",gaomi city,china
+820886,820886,802600,dasmarinas,philippines,0.0228,w,728,"dasmarinas, philippines",dasmariñas,philippines
+820297,820297,803194,cagayan de oro city,philippines,0.0213,w,729,"cagayan de oro city, philippines",cagayan de oro,philippines
+818761,818761,795835,hanchuan,china,0.0288,w,730,"hanchuan, china",hanchuan city,china
+818037,818037,796756,meishan,china,0.0267,w,731,"meishan, china",meishan,china
+816848,816848,814332,bologna,italy,0.0031,w,732,"bologna, italy",bologna,italy
+815869,815869,798382,ar-rayyan,qatar,0.0219,w,733,"ar-rayyan, qatar",al rayyan,qatar
+814980,814980,814524,thessaloniki,greece,0.0006,w,734,"thessaloniki, greece",thessaloniki,greece
+814491,814491,791214,muzaffarnagar,india,0.0294,w,735,"muzaffarnagar, india",muzaffarnagar,india
+813379,813379,786192,kayamkulam,india,0.0346,w,736,"kayamkulam, india",kayamkulam,india
+813078,813078,806757,nottingham,united kingdom,0.0078,w,737,"nottingham, united kingdom",nottingham,united kingdom
+811446,811446,801853,nakhon ratchasima,thailand,0.012,w,738,"nakhon ratchasima, thailand",nakhon ratchasima province,thailand
+810450,810450,789755,danyang,china,0.0262,w,739,"danyang, china",danyang city,china
+810149,810149,771514,ibb,yemen,0.0501,w,740,"ibb, yemen",ibb governorate,yemen
+808263,808263,792620,amravati,india,0.0197,w,741,"amravati, india",amravati,india
+808079,808079,796509,jiaozuo,china,0.0145,w,742,"jiaozuo, china",jiaozuo,china
+802900,802900,793927,vereeniging,south africa,0.0113,w,743,"vereeniging, south africa",vereeniging,south africa
+801634,801634,788276,gorakhpur,india,0.0169,w,744,"gorakhpur, india",gorakhpur,india
+800636,800636,778187,gaza,palestine,0.0288,w,745,"gaza, palestine",gaza strip,palestinian territories
+800529,800529,796437,frankfurt,germany,0.0051,w,746,"frankfurt, germany",frankfurt,germany
+795987,795987,779535,anqing,china,0.0211,w,747,"anqing, china",anqing,china
+795916,795916,797865,niigata,japan,-0.0024,w,748,"niigata, japan",niigata prefecture,japan
+795808,795808,771515,oshogbo,nigeria,0.0315,w,749,"oshogbo, nigeria",oshogbo,nigeria
+795777,795777,776076,linhai,china,0.0254,w,750,"linhai, china",linhai,china
+794279,794279,784230,shaoguan,china,0.0128,w,751,"shaoguan, china",shaoguan,china
+793545,793545,760129,merca,somalia,0.044,w,753,"merca, somalia",merca district,somalia
+792925,792925,778280,bur sa'id,egypt,0.0188,w,754,"bur sa'id, egypt",port said,egypt
+792350,792350,762981,kitwe,zambia,0.0385,w,755,"kitwe, zambia",kitwe,zambia
+791839,791839,767188,yan'an,china,0.0321,w,756,"yan'an, china",yan'an,china
+789558,789558,775559,cuttack,india,0.0181,w,757,"cuttack, india",cuttack,india
+786843,786843,781047,hamilton,canada,0.0074,w,758,"hamilton, canada",hamilton,canada
+786197,786197,766007,zaria,nigeria,0.0264,w,759,"zaria, nigeria",zaria,nigeria
+785125,785125,770959,banjarmasin,indonesia,0.0184,w,760,"banjarmasin, indonesia",banjarmasin,indonesia
+783041,783041,759150,dengzhou,china,0.0315,w,761,"dengzhou, china",dengzhou city,china
+783020,783020,767161,belgaum,india,0.0207,w,762,"belgaum, india",belagavi,india
+781925,781925,764628,malegaon,india,0.0226,w,763,"malegaon, india",malegaon,india
+781875,781875,744247,goma,dr congo,0.0506,w,764,"goma, dr congo",goma,democratic republic of the congo
+779684,779684,768075,zigong,china,0.0151,w,765,"zigong, china",zigong,china
+778628,778628,766782,qingyuan,china,0.0154,w,766,"qingyuan, china",qingyuan city,china
+777193,777193,754711,yuncheng,china,0.0298,w,767,"yuncheng, china",yuncheng,china
+776404,776404,761169,shaoyang,china,0.02,w,768,"shaoyang, china",shaoyang county,china
+775672,775672,757224,yanji,china,0.0244,w,769,"yanji, china",yanji city,china
+775455,775455,752744,tirupati,india,0.0302,w,770,"tirupati, india",tirupati,india
+775097,775097,758185,maturin,venezuela,0.0223,w,771,"maturin, venezuela",maturin,venezuela
+774356,774356,750102,yuxi,china,0.0323,w,772,"yuxi, china",yuxi,china
+773141,773141,744371,akure,nigeria,0.0387,w,773,"akure, nigeria",akure,nigeria
+772756,772756,756158,tongliao,china,0.022,w,774,"tongliao, china",tongliao city,china
+770962,770962,753325,sialkot,pakistan,0.0234,w,775,"sialkot, pakistan",sialkot,pakistan
+770032,770032,752916,tongling,china,0.0227,w,776,"tongling, china",tongling,china
+769396,769396,769417,krakow,poland,0.0,w,777,"krakow, poland",krakow,poland
+768822,768822,766703,ansan,south korea,0.0028,w,778,"ansan, south korea",ansan,south korea
+768512,768512,751679,wuzhou,china,0.0224,w,779,"wuzhou, china",wuzhou city,china
+767532,767532,748257,dazhou,china,0.0258,w,780,"dazhou, china",dazhou,china
+765887,765887,750097,suining sichuan,china,0.0211,w,781,"suining sichuan, china",suining,china
+763312,763312,749073,mangalore,india,0.019,w,782,"mangalore, india",mangaluru,india
+761903,761903,749763,jiamusi,china,0.0162,w,783,"jiamusi, china",jiamusi city,china
+759157,759157,734699,al-hudaydah,yemen,0.0333,w,784,"al-hudaydah, yemen",al hudaydah governorate,yemen
+757992,757992,753624,seattle,united states,0.0058,us,785,"seattle, united states",seattle,united states
+757915,757915,741818,sargodha,pakistan,0.0217,w,786,"sargodha, pakistan",sargodha,pakistan
+757823,757823,722836,nay pyi taw,myanmar,0.0484,w,787,"nay pyi taw, myanmar",nay pyi taw,myanmar
+757506,757506,729768,tamale,ghana,0.038,w,788,"tamale, ghana",tamale,ghana
+757137,757137,749188,sao jose dos campos,brazil,0.0106,w,789,"sao jose dos campos, brazil",são josé dos campos,brazil
+757035,757035,739682,bacoor,philippines,0.0235,w,790,"bacoor, philippines",bacoor,philippines
+756344,756344,738200,dongtai,china,0.0246,w,791,"dongtai, china",yancheng city,china
+755752,755752,733810,zhangjiagang,china,0.0299,w,792,"zhangjiagang, china",suzhou city,china
+755577,755577,738552,nanded waghala,india,0.0231,w,793,"nanded waghala, india",nanded,india
+754446,754446,743491,xianyang shaanxi,china,0.0147,w,794,"xianyang shaanxi, china",xianyang,china
+753708,753708,729276,amara,iraq,0.0335,w,795,"amara, iraq",amarah,iraq
+753392,753392,748428,zarqa,jordan,0.0066,w,796,"zarqa, jordan",zarqa,jordan
+751493,751493,737128,bhavnagar,india,0.0195,w,797,"bhavnagar, india",bhavnagar,india
+751303,751303,745876,sheffield,united kingdom,0.0073,w,798,"sheffield, united kingdom",sheffield,united kingdom
+751297,751297,727641,huambo,angola,0.0325,w,799,"huambo, angola",huambo province,angola
+750174,750174,742115,ribeirao preto,brazil,0.0109,w,800,"ribeirao preto, brazil",ribeirão preto,brazil
+750036,750036,738495,panzhihua,china,0.0156,w,801,"panzhihua, china",panzhihua,china
