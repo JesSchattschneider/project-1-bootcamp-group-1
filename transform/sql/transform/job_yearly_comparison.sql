@@ -6,10 +6,7 @@ job_id
 , job_title
 , job_description
 , job_location
-, population
-from findwork_data f
-join population_data p
-on f.job_location = p.city),
+from findwork_data f),
 
 raw_job as (
 select 
@@ -20,7 +17,6 @@ job_id
 , job_title
 , job_description
 , job_location
-, population
 from job_population),
 
 raw_job2 as (
@@ -33,7 +29,6 @@ job_id
 , job_title
 , job_description
 , job_location
-, population
 from
 raw_job
 ),
@@ -48,7 +43,6 @@ job_id
 , job_title
 , job_description
 , job_location
-, population
 , case when job_year_month >= '2023-6' and job_year_month <= '2024-6' then 'current_year'
        when job_year_month >= '2022-6' and job_year_month <= '2023-6' then 'last_year'
        else 'null'
@@ -60,6 +54,7 @@ raw_job2
 select 
 job_post_year
 , job_post_month
+yr
 , count(*) over (partition by yr) as num_of_yearly_job
 from job
-order by job_post_year
+--order by job_post_year
