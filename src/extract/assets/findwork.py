@@ -1,14 +1,16 @@
-from jinja2 import Environment
+from jinja2 import Environment, FileSystemLoader, Template
 import pandas as pd
 from src.extract.connectors.findwork_api import FindWorkApiClient
 from pathlib import Path
-from sqlalchemy import Table, MetaData
+from sqlalchemy import Table, MetaData, Column, inspect
 from src.extract.connectors.postgresql import PostgreSqlClient
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 from graphlib import TopologicalSorter
 import time
 from typing import Tuple
+from sqlalchemy.dialects import postgresql
+from sqlalchemy.engine import URL, Engine
 
 def extract_jobs(
     findwork_api_client: FindWorkApiClient, search_query: str = None, location: str = None, page: int = 1
@@ -264,3 +266,99 @@ def transform_population(df_population: pd.DataFrame) -> pd.DataFrame:
     # print("Number of rows in df_selected:", len(df_selected))
 
     return df_population
+
+def extract(
+    sql_template: Template,
+    source_engine: Engine,
+    target_engine: Engine,
+) -> list[dict]:
+    extract_type = sql_template.make_module().config.get("extract_type")
+    if extract_type == "full":
+        sql = sql_template.render()
+        ##print(sql)
+        return [dict(row) for row in source_engine.execute(sql).all()]
+    elif extract_type == "incremental":
+        # if target table exists :
+        source_table_name = sql_template.make_module().config.get("source_table_name")
+        if inspect(target_engine).has_table(source_table_name):
+            incremental_column = sql_template.make_module().config.get(
+                "incremental_column"
+            )
+            sql_result = [
+                dict(row)
+                for row in target_engine.execute(
+                    f"select max({incremental_column}) as incremental_value from {source_table_name}"
+                ).all()
+            ]
+            incremental_value = sql_result[0].get("incremental_value")
+            sql = sql_template.render(
+                is_incremental=True, incremental_value=incremental_value
+            )
+        else:
+            sql = sql_template.render(is_incremental=False)
+        print(sql)
+        return [dict(row) for row in source_engine.execute(sql).all()]
+    else:
+        raise Exception(
+            f"Extract type {extract_type} is not supported. Please use either 'full' or 'incremental' extract type."
+        )
+
+
+def get_schema_metadata(engine: Engine) -> Table:
+    metadata = MetaData(bind=engine)
+    metadata.reflect()  # get target table schemas into metadata object
+    return metadata
+
+
+def _create_table(table_name: str, metadata: MetaData, engine: Engine):
+    existing_table = metadata.tables[table_name]
+    new_metadata = MetaData()
+    columns = [
+        Column(column.name, column.type, primary_key=column.primary_key)
+        for column in existing_table.columns
+    ]
+    new_table = Table(table_name, new_metadata, *columns)
+    new_metadata.create_all(bind=engine)
+    return new_metadata
+
+
+def load2(
+    data: list[dict],
+    table_name: str,
+    engine: Engine,
+    source_metadata: MetaData,
+    chunksize: int = 1000,
+):
+    target_metadata = _create_table(
+        table_name=table_name, metadata=source_metadata, engine=engine
+    )
+    table = target_metadata.tables[table_name]
+    max_length = len(data)
+    key_columns = [pk_column.name for pk_column in table.primary_key.columns.values()]
+    for i in range(0, max_length, chunksize):
+        if i + chunksize >= max_length:
+            lower_bound = i
+            upper_bound = max_length
+        else:
+            lower_bound = i
+            upper_bound = i + chunksize
+        insert_statement = postgresql.insert(table).values(
+            data[lower_bound:upper_bound]
+        )
+        upsert_statement = insert_statement.on_conflict_do_update(
+            index_elements=key_columns,
+            set_={
+                c.key: c for c in insert_statement.excluded if c.key not in key_columns
+            },
+        )
+        engine.execute(upsert_statement)
+
+
+def transform2(engine: Engine, sql_template: Template, table_name: str):
+    exec_sql = f"""
+            drop table if exists {table_name};
+            create table {table_name} as (
+                {sql_template.render()}
+            )
+        """
+    engine.execute(exec_sql)

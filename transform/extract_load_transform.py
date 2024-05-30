@@ -5,7 +5,7 @@ from sqlalchemy import create_engine, Table, MetaData, Column, inspect
 from sqlalchemy.dialects import postgresql
 from jinja2 import Environment, FileSystemLoader, Template
 
-#### here is required modifications according to our datasets 
+
 
 
 def extract(
@@ -161,7 +161,7 @@ if __name__ == "__main__":
             source_metadata=source_metadata,
         )
 
-#### until here is required modifications according to our datasets 
+
 
     transform_environment = Environment(loader=FileSystemLoader("sql/transform"))
 
