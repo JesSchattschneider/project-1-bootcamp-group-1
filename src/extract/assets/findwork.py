@@ -11,6 +11,8 @@ import time
 from typing import Tuple
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.engine import URL, Engine
+import numpy as np
+
 
 def extract_jobs(
     findwork_api_client: FindWorkApiClient, search_query: str = None, location: str = None, page: int = 1
@@ -18,28 +20,27 @@ def extract_jobs(
     """
     Extract job listings based on the search query and location.
     """
-    # todo:
     # check if findwork_data already exists in the db, if so, get the last page number
     # if not, set page to list [1:60]
 
     jobs_data = findwork_api_client.get_jobs(
         search_query=search_query, location=location, page=page)
-    
+
     # Print the keys of the 'jobs' dictionary
-    print("Keys in the 'jobs' dictionary:", jobs_data.keys())
+    # print("Keys in the 'jobs' dictionary:", jobs_data.keys())
 
     # print the keys in the results dictionary
-    print("Keys in the 'results' dictionary:", jobs_data['results'][0].keys())
+    # print("Keys in the 'results' dictionary:", jobs_data['results'][0].keys())
 
     # place the results in a dataframe
     df_jobs_results = pd.json_normalize(jobs_data['results'])
 
     # Print the number of job listings in the 'results' list
-    print("Number of job listings in the 'results' list:",
-          len(jobs_data['results']))
+    # print("Number of job listings in the 'results' list:",
+    #      len(jobs_data['results']))
 
     # print the value of jobs_data['next'] to see if there are more pages
-    print("Value of jobs_data['next']:", jobs_data['next'])
+    # print("Value of jobs_data['next']:", jobs_data['next'])
 
     # if there are more pages, return True
     if jobs_data['next'] is not None:
@@ -49,26 +50,29 @@ def extract_jobs(
 
     return df_jobs_results, has_more
 
+
 def extract_population(population_reference_path: Path) -> pd.DataFrame:
     """Extracts data from the population file"""
     df_population = pd.read_csv(population_reference_path)
     return df_population
 
+
 # Initialize geocoder with a longer timeout
-geolocator = Nominatim(user_agent="job_location_parser", timeout=1)
+geolocator = Nominatim(user_agent="job_location_parser")
+
 
 def _parse_location(location):
     # Handle NA or None values
     if pd.isna(location) or location.upper() == "NA":
-        return ("Unknown", "Unknown")
+        return (np.nan, np.nan)
 
     # Handle remote jobs separately
     if "REMOTE" in location.upper():
-        return ("Remote", "Remote")
-    
+        return (np.nan, np.nan)
+
     # Handle remote jobs with no location specified separately
     if location.upper() == "NONE":
-        return ("Unknown", "Unknown")
+        return (np.nan, np.nan)
 
     attempt = 0
     while attempt < 5:
@@ -78,15 +82,24 @@ def _parse_location(location):
             if location_geo:
                 # Split the address into components
                 address_parts = location_geo.address.split(',')
+                # Extract the relevant parts
                 country = address_parts[-1].strip()
-                # Assume the city is the second to last part
-                city = address_parts[-3].strip() if len(address_parts) > 2 else address_parts[0].strip()
+                city = address_parts[0].strip() if len(
+                    address_parts) > 0 else "Unknown"
+
+                # Check for administrative areas in the address parts
+                if len(address_parts) > 2:
+                    if any(keyword in address_parts[-3].lower() for keyword in ["city", "town", "village", "municipality"]):
+                        city = address_parts[-3].strip()
+                    elif any(keyword in address_parts[-2].lower() for keyword in ["city", "town", "village", "municipality"]):
+                        city = address_parts[-2].strip()
                 return (city, country)
             else:
                 return ("Unknown", "Unknown")
         except GeocoderTimedOut:
             attempt += 1
-            print(f"Timeout occurred for {location}. Retrying... (Attempt {attempt})")
+            print(
+                f"Timeout occurred for {location}. Retrying... (Attempt {attempt})")
             time.sleep(2 ** attempt)  # Exponential backoff
         except Exception as e:
             print(f"Exception: {e}")
@@ -95,7 +108,14 @@ def _parse_location(location):
 
 
 def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
-    """Transform the raw dataframes."""
+    """Transform the raw dataframes.
+    -- city_geopy and country_geopy are na if:
+        -- job_location contains the work "remote"
+        -- if location = none
+
+    -- city_geopy and country_geopy unknown if:
+        -- address did not return a valid address by geopy
+    """
     pd.options.mode.chained_assignment = None  # default='warn'
 
     df_jobs_renamed = df_jobs.rename(
@@ -115,24 +135,44 @@ def transform_jobs(df_jobs: pd.DataFrame) -> pd.DataFrame:
                  }
     )
 
-    #convert the datetime field to standard datetime field
-    df_jobs_renamed["date_posted"] = pd.to_datetime(df_jobs_renamed["date_posted"])
-
+    # convert the datetime field to standard datetime field
+    df_jobs_renamed["date_posted"] = pd.to_datetime(
+        df_jobs_renamed["date_posted"])
 
     df_jobs_renamed["job_id"] = df_jobs_renamed["job_id"].astype(str)
 
-    # Set all columns to lowercase 
+    # Set all columns to lowercase
     df_jobs_renamed.columns = map(str.lower, df_jobs_renamed.columns)
+    # Set values in all columns to lowercase
+    df_jobs_renamed = df_jobs_renamed.apply(
+        lambda x: x.astype(str).str.lower())
 
-    # Handle location column
-    df_jobs_renamed[['city', 'country']] = df_jobs_renamed['job_location'].apply(lambda x: pd.Series(_parse_location(x)))
+    # Handle location column - create a table to map the original location to the city and country
+
+    # remove job_location = none
+    fw_data = df_jobs_renamed[df_jobs_renamed['job_location'] != "none"]
+
+    # remove job_location = nan
+    fw_data = fw_data[fw_data['job_location'].notna()]
+
+    # get only unique locations
+    map_location = fw_data.drop_duplicates(subset=['job_location'])
+
+    map_location[['city_geopy', 'country_geopy']] = map_location['job_location'].apply(
+        lambda x: pd.Series(_parse_location(x)))
 
     # Set values in all columns to lowercase
-    df_jobs_renamed = df_jobs_renamed.apply(lambda x: x.astype(str).str.lower())
+    map_location = map_location.apply(lambda x: x.astype(str).str.lower())
 
-    df_jobs_renamed.to_csv("jobs.csv", index=False)
+    map_location = map_location[[
+        'job_location', 'city_geopy', 'country_geopy']]
 
-    return df_jobs_renamed
+    res = pd.merge(df_jobs_renamed, map_location,
+                   on='job_location', how='left')
+
+    return res
+
+
 class SqlTransform:
     def __init__(
         self,
@@ -157,6 +197,7 @@ class SqlTransform:
         """
         self.postgresql_client.execute_sql(exec_sql)
 
+
 def transform(dag: TopologicalSorter):
     """
     Performs `create table as` on all nodes in the provided DAG.
@@ -164,6 +205,7 @@ def transform(dag: TopologicalSorter):
     dag_rendered = tuple(dag.static_order())
     for node in dag_rendered:
         node.create_table_as()
+
 
 def load(
     df: pd.DataFrame,
@@ -200,18 +242,18 @@ def transform_population(df_population: pd.DataFrame) -> pd.DataFrame:
     """Transform the raw dataframes."""
     pd.options.mode.chained_assignment = None  # default='warn'
 
-    # Set all columns to lowercase 
+    # Set all columns to lowercase
     df_population.columns = map(str.lower, df_population.columns)
 
     # Handle location column
-    df_population[['city', 'country']] = df_population['city'].apply(lambda x: pd.Series(_parse_location(x)))
+    df_population[['city', 'country']] = df_population['city'].apply(
+        lambda x: pd.Series(_parse_location(x)))
 
     # Set values in all columns to lowercase
     df_jobs_renamed = df_population.apply(lambda x: x.astype(str).str.lower())
     print(df_jobs_renamed.head())
 
     df_jobs_renamed.to_csv("pop.csv", index=False)
-    
 
     # set to lowercase
     # df_population["location"] = df_population["location"].str.lower()
