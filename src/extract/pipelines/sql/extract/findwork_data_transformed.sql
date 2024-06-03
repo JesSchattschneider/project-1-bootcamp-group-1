@@ -1,7 +1,7 @@
 {% set config = {
     "extract_type": "full",
     "incremental_column": "date_posted",
-    "source_table_name": "findwork_data"
+    "source_table_name": "findwork_data_transformed"
 } %}
 
 select
@@ -12,7 +12,9 @@ date_posted
 , employment_type
 , job_title
 , job_description
-, job_location
+-- , job_location,
+, city_geopy as job_location
+-- , country_geopy,
 , keywords
 from
     {{ config["source_table_name"] }}

@@ -6,7 +6,7 @@ job_id
 , job_title
 , job_description
 , job_location
-from findwork_data f),
+from findwork_data_transformed f),
 
 raw_job as (
 select 
