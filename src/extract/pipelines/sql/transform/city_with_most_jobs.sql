@@ -6,7 +6,7 @@ job_id
 , job_description
 , job_location
 , population
-from findwork_data f
+from findwork_data_transformed f
 join population_data p
 on f.job_location = p.city),
 

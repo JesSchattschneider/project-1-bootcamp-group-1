@@ -3,5 +3,5 @@ select
        when remote ='false' then 'office work'
        end as work_location
 , count(job_id) num_of_job
-from findwork_data 
+from findwork_data_transformed 
 group by work_location

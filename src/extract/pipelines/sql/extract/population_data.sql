@@ -7,9 +7,9 @@ select
 population
 , pop2024
 , pop2023
-, city
+, city_geopy as city
 , country
-, "growthRate" 
+, "growthrate" 
 , type
 , rank
 from

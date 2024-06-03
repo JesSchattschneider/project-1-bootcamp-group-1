@@ -7,7 +7,7 @@ job_id
 , job_description
 , job_location
 , employment_type
-from findwork_data f
+from findwork_data_transformed f
 ),
 
 raw_job as (
