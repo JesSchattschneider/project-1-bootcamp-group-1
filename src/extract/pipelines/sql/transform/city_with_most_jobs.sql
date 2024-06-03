@@ -6,6 +6,7 @@ job_id
 , job_description
 , job_location
 , population
+, rank
 from findwork_data_transformed f
 join population_data p
 on f.job_location = p.city),
@@ -20,10 +21,12 @@ raw_job
 
 select 
 job_location as city
+, rank
 , count(*) as num_of_job
 from raw_job j
 inner join city_population c
 on c.city = j.job_location
-group by job_location
+where rank <= 10
+group by job_location, rank
 order by count(*) desc
 
